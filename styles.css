@@ -1,0 +1,270 @@
+/* === GLOBAL RESET === */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: #111;
+  overflow-x: hidden;
+}
+
+/* === HERO SECTION === */
+.hero {
+  background: url('images/Loo.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+}
+
+/* === LOGO === */
+.logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 600px;
+  height: auto;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    position: relative;
+    top: 0;
+    right: auto;
+    display: block;
+    margin: 20px auto;
+    width: 250px;
+  }
+}
+
+/* === TREE GRID === */
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(80px, auto);
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sefirah {
+  width: 80px;
+  height: 80px;
+  border: 2px solid black;
+  outline: 2px solid white;
+  outline-offset: 2px;
+  border-radius: 50%;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin: auto;
+  transition: transform 0.6s ease, box-shadow 0.4s ease;
+}
+
+.sefirah:hover {
+  transform: rotate(720deg);
+  box-shadow: 0 0 12px 4px white;
+}
+
+/* === TREE GRID PLACEMENT === */
+#keter     { grid-column: 3; grid-row: 1; }
+#chokhmah  { grid-column: 2; grid-row: 2; }
+#binah     { grid-column: 4; grid-row: 2; }
+#daat      { grid-column: 3; grid-row: 3; }
+#chesed    { grid-column: 2; grid-row: 4; }
+#gevurah   { grid-column: 4; grid-row: 4; }
+#tiferet   { grid-column: 3; grid-row: 5; }
+#netzach   { grid-column: 2; grid-row: 6; }
+#hod       { grid-column: 4; grid-row: 6; }
+#yesod     { grid-column: 3; grid-row: 7; }
+#malkhut   { grid-column: 3; grid-row: 9; }
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sefirah {
+    width: 60px;
+    height: 60px;
+    font-size: 0.7rem;
+  }
+}
+
+/* === MODAL === */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+  border: 2px solid #444;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#modal-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 12px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* === MANIFEST ZONE === */
+.manifest-zone {
+  position: relative;
+  background: #111;
+  color: white;
+  overflow: hidden;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* === CORNER LOGO === */
+.corner-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 600px;
+  max-width: 40vw;
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .corner-logo {
+    position: static;
+    display: block;
+    margin: 20px auto 0;
+    width: 160px;
+  }
+}
+
+/* === MICAH BACKGROUND === */
+.micah-overlay {
+  background: url('images/micah.png') no-repeat center top;
+  background-size: contain;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .micah-overlay {
+    background: none !important;
+  }
+}
+
+/* === PRODUCTS === */
+.product-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.2s ease forwards;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.cart-btn {
+  background: black;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cart-btn:hover {
+  background: white;
+  color: black;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

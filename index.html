@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thug Coding Tree of Life</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="images/THUGCODING_LOGO.png" alt="Thug Coding Logo" class="logo" />
+    <div class="container">
+      <div id="keter" class="sefirah" onclick="showLesson('Crown')">Crown</div>
+      <div id="chokhmah" class="sefirah" onclick="showLesson('Wisdom')">Wisdom</div>
+      <div id="binah" class="sefirah" onclick="showLesson('Mastery')">Mastery</div>
+      <div id="daat" class="sefirah" onclick="showLesson('Knowledge')">Knowledge</div>
+      <div id="chesed" class="sefirah" onclick="showLesson('Mercy')">Mercy</div>
+      <div id="gevurah" class="sefirah" onclick="showLesson('Strength')">Strength</div>
+      <div id="tiferet" class="sefirah" onclick="showLesson('Beauty')">Beauty</div>
+      <div id="netzach" class="sefirah" onclick="showLesson('Victory')">Victory</div>
+      <div id="hod" class="sefirah" onclick="showLesson('Glory')">Glory</div>
+      <div id="yesod" class="sefirah" onclick="showLesson('Foundation')">Foundation</div>
+      <div id="malkhut" class="sefirah" onclick="showLesson('Kingdom')">Kingdom</div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">×</span>
+      <h2 id="modal-title"></h2>
+      <div id="modal-message"></div>
+      <a id="modal-link" href="#" target="_self">Learn more →</a>
+    </div>
+  </div>
+
+  <!-- Manifest + Products Over Micah Background -->
+  <section class="manifest-zone">
+    <img src="images/2019.png" alt="Since 2019" class="corner-logo" />
+    <div class="micah-overlay">
+      <div class="product-vertical">
+
+        <div class="product fade-in-up">
+          <a href="https://www.getitfrommike.net/product-page/thug-coding-dub-t-shirt" target="_blank">
+            <img src="images/DUB.png" alt="Dub Shirt">
+          </a>
+          <a href="https://www.getitfrommike.net/product-page/thug-coding-dub-t-shirt" target="_blank" class="cart-btn">Buy Now</a>
+        </div>
+
+        <div class="product fade-in-up">
+          <a href="https://www.getitfrommike.net/product-page/thug-coding-aphrodite-jones-t-shirt" target="_blank">
+            <img src="images/JONES.png" alt="Jones Shirt">
+          </a>
+          <a href="https://www.getitfrommike.net/product-page/thug-coding-aphrodite-jones-t-shirt" target="_blank" class="cart-btn">Buy Now</a>
+        </div>
+
+        <div class="product fade-in-up">
+          <a href="https://www.getitfrommike.net/product-page/thug-coding-learn-tech-t-shirt" target="_blank">
+            <img src="images/TECH.png" alt="Tech Shirt">
+          </a>
+          <a href="https://www.getitfrommike.net/product-page/thug-coding-learn-tech-t-shirt" target="_blank" class="cart-btn">Buy Now</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
