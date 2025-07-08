@@ -13,7 +13,7 @@ body {
 
 /* === HERO SECTION === */
 .hero {
-  background: url('images/Loo.png') no-repeat center center;
+  background: url('/images/Loo.png') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   padding: 100px 20px;
