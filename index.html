@@ -36,12 +36,11 @@
     </div>
   </div>
 
-  <!-- Manifest + Products Over Micah Background -->
+  <!-- Manifest + Products -->
   <section class="manifest-zone">
     <img src="images/2019.png" alt="Since 2019" class="corner-logo" />
     <div class="micah-overlay">
       <div class="product-vertical">
-
         <div class="product fade-in-up">
           <a href="https://www.getitfrommike.net/product-page/thug-coding-dub-t-shirt" target="_blank">
             <img src="images/DUB.png" alt="Dub Shirt">
@@ -62,12 +61,135 @@
           </a>
           <a href="https://www.getitfrommike.net/product-page/thug-coding-learn-tech-t-shirt" target="_blank" class="cart-btn">Buy Now</a>
         </div>
-
       </div>
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <!-- Mission & About Slideshow Section -->
+<section class="hero-slideshow">
+  <div class="slide active" style="background-image: url('images/slide1.jpg');">
+    <div class="slide-content">
+      <h1>Thug Coding®</h1>
+      <p>Where tech meets purpose. Real tools. Real change. Built by us.</p>
+    </div>
+  </div>
+  <div class="slide" style="background-image: url('images/slide2.jpg');">
+    <div class="slide-content">
+      <h1>Own Your Future</h1>
+      <p>We’re done renting genius. We build businesses from code to company.</p>
+    </div>
+  </div>
+  <div class="slide" style="background-image: url('images/slide3.jpg');">
+    <div class="slide-content">
+      <h1>Fintech for the Block</h1>
+      <p>Business knowledge. Financial power. Code is just the start.</p>
+    </div>
+  </div>
+
+  <!-- Placeholder Slides (Add real content later) -->
+  <div class="slide" style="background-image: url('images/slide4.jpg');">
+    <div class="slide-content"><h1>Coming Soon</h1><p>More lessons. More moves.</p></div>
+  </div>
+  <div class="slide" style="background-image: url('images/slide5.jpg');">
+    <div class="slide-content"><h1>Coming Soon</h1><p>Ownership is earned.</p></div>
+  </div>
+  <div class="slide" style="background-image: url('images/slide6.jpg');">
+    <div class="slide-content"><h1>Coming Soon</h1><p>Legacy isn’t optional. It’s required.</p></div>
+  </div>
+  <div class="slide" style="background-image: url('images/slide7.jpg');">
+    <div class="slide-content"><h1>Coming Soon</h1><p>Code. Cash. Control.</p></div>
+  </div>
+  <div class="slide" style="background-image: url('images/slide8.jpg');">
+    <div class="slide-content"><h1>Coming Soon</h1><p>Systems that serve us.</p></div>
+  </div>
+  <div class="slide" style="background-image: url('images/slide9.jpg');">
+    <div class="slide-content"><h1>Coming Soon</h1><p>Tech is the new hustle.</p></div>
+  </div>
+  <div class="slide" style="background-image: url('images/slide10.jpg');">
+    <div class="slide-content"><h1>Coming Soon</h1><p>Thug Coding Nation.</p></div>
+  </div>
+</section>
+
+
+  <!-- About Section -->
+  <div class="about-section">
+<h2>QUESTION</h2>
+<p>Got a little brother or nephew (or maybe even yourself) that you don’t want out there in the streets?</p>
+
+<p>Support a positive future for your loved ones. Give him an alternative!</p>
+
+<p>Learn Computer Science and Software Engineering — real skills that can lead to a six-figure income.</p>
+
+<p><strong>Thug Coding®</strong> is the ultimate solution to eliminating business and financial ignorance in the hood — through tech. We're not just teaching how to program and write code — we're building companies, ownership, and systems run by the people.</p>
+
+<p>We're also teaching the other essential codes: <em>finance code, business code, tax code, probate code</em>, and more.</p>
+
+<p><strong>Are you ready to be the best?</strong></p>
+
+<hr>
+
+<h2>GOAL</h2>
+<p>Every lesson is a real step — from idea, to frontend, to backend, to business — and into legacy. We don’t just dream — we <strong>CREATE</strong>. We <strong>DEPLOY</strong>.</p>
+
+<p>The 11 spinning circles you see above represent a path — a guide through each step toward mastery in computer science and revenue generation.</p>
+
+<p>The first step is <strong>KINGDOM</strong>. That’s where it all begins. In this phase, we outline the program and begin your membership — if that’s the path you choose. Or, simply explore what we do and shop from a variety of products and services created by our members.</p>
+
+<p><em>As of July 7, 2025</em>, we are launching with <strong>KINGDOM</strong>.</p>
+
+<p><strong><a href="javascript:void(0)" onclick="showLesson('Kingdom')">START THERE.</a></strong></p>
+
+
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Modal Logic
+    function showLesson(name) {
+      const messages = {
+        Crown: "Let go of identity. Become still.",
+        Wisdom: "The spark of insight strikes before thought can shape it.",
+        Mastery: "Give shape to vision.",
+        Knowledge: "Between knowing and unknowing lies the abyss.",
+        Mercy: "True power flows through generosity.",
+        Strength: "Love without boundaries leads to destruction.",
+        Beauty: "Balance the sword and the cup.",
+        Victory: "Keep going — divine fire endures.",
+        Glory: "Wisdom is hollow without humility.",
+        Foundation: "The hidden shapes the visible.",
+        Kingdom: "We ARE chosen. We manifest institutions."
+      };
+
+      const modal = document.getElementById("modal");
+      document.getElementById("modal-title").textContent = name;
+      document.getElementById("modal-message").innerHTML = `<p>${messages[name] || "XXXXXX"}</p>`;
+      document.getElementById("modal-link").href = `pages/${name.toLowerCase()}.html`;
+
+      modal.classList.add("show");
+    }
+
+    function closeModal() {
+      document.getElementById("modal").classList.remove("show");
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById("modal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    // Slideshow Logic
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".hero-slideshow .slide");
+
+    function rotateSlides() {
+      slides[slideIndex].classList.remove("active");
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+    }
+
+    setInterval(rotateSlides, 6000);
+  </script>
 </body>
 </html>
-

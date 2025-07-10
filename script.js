@@ -1,3 +1,4 @@
+// === Sefirah Modal Logic ===
 const sefirahMessages = {
   Crown: {
     text: "Let go of identity. Become still. Only in silence can the infinite will be known.",
@@ -61,7 +62,6 @@ function showLesson(name) {
       .join('');
     link.href = data.link;
 
-    // Reset animation
     content.style.animation = "none";
     void content.offsetWidth;
     content.style.animation = "fadeInUp 0.4s ease";
@@ -81,3 +81,14 @@ window.onclick = function(event) {
   }
 };
 
+// === Hero Slideshow Logic ===
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slideshow .slide');
+
+function showNextSlide() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+
+setInterval(showNextSlide, 5000); // every 5 seconds

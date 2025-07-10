@@ -11,9 +11,9 @@ body {
   overflow-x: hidden;
 }
 
-/* === HERO SECTION === */
+/* === HERO SECTION (LEGACY) === */
 .hero {
-  background: url('/images/Loo.png') no-repeat center center;
+  background: url('images/Loo.png') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   padding: 100px 20px;
@@ -21,7 +21,6 @@ body {
   position: relative;
 }
 
-/* === LOGO === */
 .logo {
   position: absolute;
   top: 20px;
@@ -164,7 +163,7 @@ body {
   border-radius: 5px;
 }
 
-/* === MANIFEST ZONE === */
+/* === MANIFEST ZONE + PRODUCTS === */
 .manifest-zone {
   position: relative;
   background: #111;
@@ -174,7 +173,6 @@ body {
   min-height: 100vh;
 }
 
-/* === CORNER LOGO === */
 .corner-logo {
   position: absolute;
   top: 20px;
@@ -193,12 +191,10 @@ body {
   }
 }
 
-/* === MICAH BACKGROUND === */
 .micah-overlay {
   background: url('images/micah.png') no-repeat center top;
   background-size: contain;
   background-attachment: fixed;
-  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -213,7 +209,6 @@ body {
   }
 }
 
-/* === PRODUCTS === */
 .product-vertical {
   display: flex;
   flex-direction: column;
@@ -221,6 +216,8 @@ body {
   gap: 40px;
   padding: 40px 20px;
 }
+
+
 
 .product {
   display: flex;
@@ -267,4 +264,168 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* === HERO SLIDESHOW (MISSION / ABOUT SECTION) === */
+.hero-slideshow {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: black;
+}
+
+.hero-slideshow .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 1;
+}
+
+.hero-slideshow .slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 15%;
+  left: 8%;
+  color: white;
+  max-width: 600px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.55); /* semi-transparent dark box */
+  border-radius: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.slide-content h1 {
+  font-size: 3.5rem;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.slide-content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .slide-content h1 {
+    font-size: 2.5rem;
+  }
+  .slide-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slideshow {
+    height: 80vh;
+  }
+  .slide-content {
+    bottom: 10%;
+    left: 5%;
+    max-width: 90%;
+  }
+  .slide-content h1 {
+    font-size: 2rem;
+  }
+  .slide-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slideshow {
+    height: 70vh;
+  }
+  .slide-content h1 {
+    font-size: 1.6rem;
+  }
+  .slide-content p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* === HERO SLIDESHOW (under text section) === */
+
+.about-section {
+  background-color: #111;
+  color: #f4f4f4;
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.about-section p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .about-section h2 {
+    font-size: 2rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+  }
+}
+
+/* === FOR RESPONSIVE IMAGES === */
+
+@media (max-width: 768px) {
+  .product img,
+  .hero img,
+  .slide-content img,
+  .corner-logo,
+  .logo,
+  .manifest-zone img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+  }
+
+  .product,
+  .micah-overlay,
+  .manifest-zone,
+  .hero {
+    padding: 0 10px;
+    overflow-x: hidden;
+  }
+}
+
+/* === START THERE IN ABOUT SECTION === */
+
+.about-section a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.about-section a:hover {
+  color: #ccc;
 }
