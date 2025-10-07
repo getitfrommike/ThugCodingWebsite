@@ -429,3 +429,40 @@ body {
 .about-section a:hover {
   color: #ccc;
 }
+
+/* === FIX: Force white widget text + tighter button spacing === */
+
+.product h3,
+.widget-title {
+  color: #fff !important;           /* force white text */
+  text-align: center !important;
+  font-weight: bold !important;
+  margin-top: 6px !important;
+  margin-bottom: 2px !important;    /* reduce spacing below */
+  font-size: 1rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cart-btn {
+  margin-top: 2px !important;       /* bring button closer to image */
+  background: #fff !important;      /* white button */
+  color: #000 !important;           /* black text */
+  border: none !important;
+  border-radius: 5px !important;
+  padding: 8px 16px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  transition: all 0.3s ease !important;
+}
+
+.cart-btn:hover {
+  background: #000 !important;      /* black on hover */
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}
+
+.product img {
+  margin-bottom: 6px !important;    /* pull image and button closer */
+}
