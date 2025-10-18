@@ -9,27 +9,37 @@
 </head>
 <body>
 
-  <!-- Banner with Background and Logo -->
+  <!-- === Banner with Background and Logo === -->
   <header class="page-banner">
     <img src="../images/THUGCODING_LOGO.png" alt="Thug Coding Logo" class="logo" />
   </header>
 
-  <!-- Call to Action -->
+  <!-- === Call to Action: Signup Form === -->
   <section class="cta-signup">
     <h2>🔗 Ready to build your own?</h2>
     <p>
-      Enter your email to unlock the first tools, frameworks, and info of the Thug Coding<sup>®</sup> system.
+      Enter your info to unlock the first tools, frameworks, and lessons of the Thug Coding<sup>®</sup> system.
     </p>
-    <form method="POST" action="https://api.web3forms.com/submit" class="signup-form">
+
+    <!-- ✅ Fully secured Web3Forms signup -->
+    <form id="kingdomForm" method="POST" action="https://api.web3forms.com/submit" class="signup-form">
       <input type="hidden" name="access_key" value="618f9db3-de33-4a62-bdb3-1a10558555fb" />
+      <input type="hidden" name="redirect" value="https://thugcoding.com/thank-you.html">
       <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="site_origin" value="ThugCoding.com/Kingdom">
+
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="you@example.com" required />
+      <input type="tel" name="phone" placeholder="Your Phone Number" pattern="[0-9+\-\s()]{7,20}" required />
+
+      <!-- ✅ hCaptcha box -->
+      <div class="h-captcha" data-captcha="true"></div>
+
       <button type="submit">👉🏾 I’m ready. Show me the system.</button>
     </form>
   </section>
 
-  <!-- Page Content -->
+  <!-- === Lesson Page Content === -->
   <main class="lesson-page">
     <h1>Kingdom</h1>
     <blockquote>“Spirit without form is just breath. Kingdom is where it becomes flesh.”</blockquote>
@@ -46,15 +56,32 @@
     <p>You weren’t made to escape the world.</p>
     <p>You were made to remake it.</p>
 
-    <!-- Navigation Links -->
     <div class="cta-links">
       <a href="../index.html" class="cart-btn">← Back to Home</a>
       <a href="https://www.getitfrommike.net/thugcodingstore99" target="_blank" class="cart-btn">Visit Shop →</a>
     </div>
   </main>
 
+  <!-- === Scripts === -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+
+  <script>
+    const form = document.getElementById('kingdomForm');
+
+    form.addEventListener('submit', function(e) {
+      // Require hCaptcha to be solved
+      const hCaptcha = form.querySelector('textarea[name=h-captcha-response]');
+      if (!hCaptcha || !hCaptcha.value) {
+        e.preventDefault();
+        alert("⚠️ Please complete the hCaptcha before submitting.");
+        return;
+      }
+    });
+  </script>
+
 </body>
 </html>
+
 
 
 
