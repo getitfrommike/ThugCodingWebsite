@@ -135,16 +135,21 @@
   align-items: center;
 }
 
+/* 🧩 Make all input fields uniform */
 .signup-form input[type="text"],
-.signup-form input[type="email"] {
+.signup-form input[type="email"],
+.signup-form input[type="tel"] {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
   padding: 10px 12px;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  width: 100%;
-  max-width: 300px;
 }
 
+/* === BUTTON === */
 .signup-form button {
   padding: 10px 20px;
   background: white;
@@ -154,6 +159,8 @@
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
+  width: 100%;
+  max-width: 300px;
 }
 
 .signup-form button:hover {
@@ -164,3 +171,4 @@
 .signup-form input[name="website"] {
   display: none;
 }
+
