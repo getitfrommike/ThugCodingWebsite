@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Coming Soon — THUG CODING®</title>
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* =========================================================
+           PAGE
+        ========================================================= */
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+
+            background: #fff;
+            color: #000;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+        }
+
+
+        /* =========================================================
+           COMING SOON
+        ========================================================= */
+
+        .coming-soon {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 60px 6%;
+
+            text-align: center;
+        }
+
+        .coming-soon-content {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .coming-soon-logo {
+            display: block;
+
+            width: min(720px, 90vw);
+            height: auto;
+
+            margin: 0 auto 42px;
+
+            /*
+             * Converts the existing white THUG CODING logo
+             * to black for this white placeholder page.
+             */
+            filter: brightness(0);
+        }
+
+        .coming-soon h1 {
+            color: #000;
+
+            font-size: clamp(1.2rem, 2.2vw, 2rem);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: 0.35em;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .page-footer {
+            width: 100%;
+            min-height: 100px;
+            padding: 32px 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-top: 1px solid #e5e5e5;
+
+            color: #666;
+
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+
+            text-align: center;
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .coming-soon {
+                padding: 45px 6%;
+            }
+
+            .coming-soon-logo {
+                width: min(520px, 88vw);
+                margin-bottom: 30px;
+            }
+
+            .coming-soon h1 {
+                font-size: 1rem;
+                letter-spacing: 0.25em;
+            }
+
+            .page-footer {
+                padding: 28px 6%;
+
+                line-height: 1.6;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         COMING SOON
+    ========================================================== -->
+
+    <main class="coming-soon">
+
+        <div class="coming-soon-content">
+
+            <a
+                href="../index.html"
+                aria-label="THUG CODING Home"
+            >
+                <img
+                    src="../images/logo.png"
+                    alt="THUG CODING"
+                    class="coming-soon-logo"
+                >
+            </a>
+
+            <h1>
+                Coming Soon
+            </h1>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="page-footer">
+        © 2026 THUG CODING® — ALL RIGHTS RESERVED.
+    </footer>
+
+</body>
+
+</html>

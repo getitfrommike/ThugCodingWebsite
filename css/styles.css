@@ -1,0 +1,1034 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+    background:#050505;
+    color:#ffffff;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    padding:22px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,0.45);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.logo img{
+    width:240px;
+    display:block;
+    filter:drop-shadow(0 0 10px rgba(255,255,255,.08));
+    transition:.3s;
+}
+
+.logo img:hover{opacity:.85;}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:.9rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.nav-links a:hover{opacity:.6;}
+
+.nav-btn{
+    padding:12px 24px;
+    border:1px solid #fff;
+    background:transparent;
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:600;
+}
+
+.nav-btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+.hero{
+    height:100vh;
+    height:100svh;
+    position:relative;
+    overflow:hidden;
+    background:#050505;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    filter:brightness(.95) contrast(1.08) saturate(.92);
+    opacity:0;
+    transition:opacity 1.4s ease;
+}
+
+.hero video.loaded{opacity:1;}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.45)
+    );
+}
+
+.manifesto{
+    padding:100px 7% 120px;
+    background:#050505;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+.manifesto-tag{
+    color:#777;
+    text-transform:uppercase;
+    letter-spacing:6px;
+    margin-bottom:30px;
+    font-size:.85rem;
+}
+
+.manifesto h1{
+    font-size:clamp(4rem, 11vw, 10rem);
+    line-height:.84;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:35px;
+    text-shadow:0 0 30px rgba(0,0,0,.45);
+}
+
+.manifesto p{
+    max-width:720px;
+    color:#bdbdbd;
+    font-size:1.1rem;
+    line-height:1.8;
+    margin-bottom:45px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.primary-btn{
+    padding:18px 34px;
+    background:#fff;
+    color:#000;
+    border:none;
+    font-weight:800;
+    cursor:pointer;
+    letter-spacing:2px;
+    transition:.35s ease;
+}
+
+.primary-btn:hover{
+    background:#d9d9d9;
+    transform:translateY(-2px);
+}
+
+.secondary-btn{
+    padding:18px 34px;
+    background:transparent;
+    border:1px solid rgba(255,255,255,.3);
+    color:#fff;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.secondary-btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+.image-marquee{
+    width:100%;
+    overflow:hidden;
+    padding:40px 0;
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    background:#050505;
+}
+
+.image-track{
+    display:flex;
+    gap:24px;
+    width:max-content;
+    animation:scrollImages 70s linear infinite;
+}
+
+.image-track:hover{
+    animation-play-state:paused;
+}
+
+.image-item{
+    width:360px;
+    height:520px;
+    position:relative;
+    overflow:hidden;
+    flex-shrink:0;
+    border-radius:14px;
+    background:#111;
+    text-decoration:none;
+    color:#fff;
+    transition:.45s ease;
+}
+
+.image-item:hover{
+    transform:translateY(-8px);
+}
+
+.image-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s ease;
+}
+
+.image-item:hover img{
+    transform:scale(1.08);
+    filter:brightness(1.08) contrast(1.08);
+}
+
+.image-item::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.92) 0%,
+        rgba(0,0,0,.55) 38%,
+        rgba(0,0,0,.08) 100%
+    );
+    pointer-events:none;
+}
+
+.image-content{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    padding:32px;
+    z-index:5;
+}
+
+.image-tag{
+    font-size:.7rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-weight:800;
+    color:#aaa;
+    margin-bottom:16px;
+}
+
+.image-title{
+    font-size:2rem;
+    line-height:.95;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:14px;
+}
+
+.image-sub{
+    font-size:.92rem;
+    line-height:1.6;
+    color:#cfcfcf;
+    max-width:280px;
+}
+
+.section{
+    padding:120px 7%;
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:60px;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.section-title{
+    font-size:clamp(2rem,5vw,5rem);
+    font-weight:900;
+    text-transform:uppercase;
+    line-height:.9;
+    color:#ffffff;
+    text-shadow:
+        0 0 18px rgba(255,255,255,.22),
+        0 0 42px rgba(255,255,255,.12);
+}
+
+.section-sub{
+    max-width:500px;
+    color:#999;
+    line-height:1.7;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:28px;
+    align-items:start;
+}
+
+.product-card{
+    position:relative;
+    overflow:hidden;
+    background:#0f0f0f;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.4s;
+    width:100%;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(255,255,255,.18);
+}
+
+.product-image{
+    position:relative;
+    overflow:hidden;
+    width:100%;
+    aspect-ratio:4 / 5;
+    background:#111;
+    display:block;
+    text-decoration:none;
+    color:inherit;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+    transition:.6s;
+}
+
+.product-card:hover img{
+    transform:scale(1.04);
+}
+
+.product-info{
+    padding:22px;
+}
+
+.product-category{
+    color:#777;
+    text-transform:uppercase;
+    font-size:.75rem;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.product-name{
+    font-size:1.05rem;
+    font-weight:800;
+    margin-bottom:12px;
+    line-height:1.3;
+}
+
+.variant-box{
+    display:grid;
+    gap:12px;
+    margin:18px 0 20px;
+}
+
+.variant-group{
+    display:grid;
+    gap:7px;
+}
+
+.variant-label{
+    color:#777;
+    font-size:.72rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.variant-select{
+    width:100%;
+    padding:12px;
+    background:#050505;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.18);
+    font-weight:700;
+    outline:none;
+}
+
+.variant-select:focus{
+    border-color:#fff;
+}
+
+.product-price{
+    font-size:1rem;
+    color:#ddd;
+    margin-bottom:18px;
+}
+
+.product-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#fff;
+    color:#000;
+    font-weight:800;
+    cursor:pointer;
+    transition:.3s;
+    letter-spacing:1px;
+}
+
+.product-btn:hover{
+    background:#c9c9c9;
+}
+
+.product-btn:disabled{
+    background:#555;
+    color:#aaa;
+    cursor:not-allowed;
+}
+
+footer{
+    padding:100px 7%;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-top{
+    display:flex;
+    justify-content:space-between;
+    gap:50px;
+    flex-wrap:wrap;
+    margin-bottom:80px;
+}
+
+.footer-brand h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.footer-brand p{
+    max-width:500px;
+    color:#8a8a8a;
+    line-height:1.8;
+}
+
+.footer-links{
+    display:flex;
+    gap:80px;
+    flex-wrap:wrap;
+}
+
+.footer-column h4{
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+
+.footer-column a{
+    display:block;
+    margin-bottom:12px;
+    text-decoration:none;
+    color:#8d8d8d;
+    transition:.3s;
+}
+
+.footer-column a:hover{color:#fff;}
+
+.footer-bottom{
+    padding-top:40px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#666;
+}
+
+@keyframes scrollImages{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+}
+
+@media(max-width:1100px){
+    .product-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+}
+
+@media(max-width:900px){
+    .nav-links{display:none;}
+    .manifesto h1{font-size:4rem;}
+}
+
+@media(max-width:768px){
+    nav{
+        padding:16px 5%;
+    }
+
+    .hero{
+        height:72svh;
+        min-height:430px;
+        max-height:680px;
+    }
+
+    .hero video{
+        object-fit:contain;
+        object-position:center center;
+    }
+
+    .hero-overlay{
+        background:linear-gradient(
+            to bottom,
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.28)
+        );
+    }
+
+    .image-item{
+        width:260px;
+        height:380px;
+    }
+
+    .image-title{
+        font-size:1.45rem;
+    }
+
+    .logo img{
+        width:170px;
+    }
+
+    .nav-btn{
+        padding:10px 14px;
+        font-size:.78rem;
+    }
+
+    .section{
+        padding:80px 5%;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+}
+
+@media(max-width:480px){
+    .hero{
+        height:62svh;
+        min-height:360px;
+    }
+
+    .manifesto{
+        padding:72px 5% 90px;
+    }
+
+    .manifesto h1{
+        font-size:clamp(3rem,16vw,4.2rem);
+    }
+}
+
+/* ==========================================================
+   THUG CODING® RADIO
+========================================================== */
+
+.radio-section{
+    padding:75px 7% 30px;
+    background:#050505;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.radio-heading{
+    text-align:center;
+    margin-bottom:34px;
+}
+
+.radio-heading h2{
+    margin-bottom:8px;
+    font-size:1.45rem;
+    font-weight:800;
+    letter-spacing:4px;
+}
+
+.radio-heading p{
+    color:#888;
+    font-size:.85rem;
+}
+
+
+/* ==========================================================
+   RADIO GRID
+========================================================== */
+
+.radio-grid{
+    max-width:1150px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:26px;
+}
+
+.radio-card{
+    min-height:275px;
+    padding:30px 25px;
+    text-align:center;
+
+    background:#080808;
+
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:6px;
+}
+
+.radio-card h3{
+    font-size:.92rem;
+    letter-spacing:2px;
+    margin-bottom:28px;
+}
+
+.radio-live-dot{
+    width:8px;
+    height:8px;
+    display:inline-block;
+    border-radius:50%;
+    background:#ed2727;
+    margin-right:8px;
+}
+
+
+/* ==========================================================
+   WAVEFORMS
+========================================================== */
+
+.radio-waveform{
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:3px;
+    margin-bottom:15px;
+}
+
+.radio-waveform span{
+    width:2px;
+    height:10px;
+    display:block;
+    background:currentColor;
+    opacity:.9;
+}
+
+.radio-waveform span:nth-child(2n){
+    height:26px;
+}
+
+.radio-waveform span:nth-child(3n){
+    height:18px;
+}
+
+.radio-waveform span:nth-child(4n){
+    height:36px;
+}
+
+.radio-waveform span:nth-child(5n){
+    height:22px;
+}
+
+.radio-waveform span:nth-child(7n){
+    height:40px;
+}
+
+.waveform-white{
+    color:#d8d8d8;
+}
+
+.waveform-green{
+    color:#00eb8f;
+}
+
+.waveform-purple{
+    color:#a73cff;
+}
+
+
+/* ==========================================================
+   RADIO TEXT
+========================================================== */
+
+.radio-now-playing{
+    color:#666;
+    font-size:.58rem;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:8px;
+}
+
+.radio-description{
+    color:#d0d0d0;
+    font-size:.82rem;
+    margin-bottom:20px;
+}
+
+
+/* ==========================================================
+   PLAY BUTTON
+========================================================== */
+
+.radio-play-btn{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+    border:2px solid #fff;
+
+    background:transparent;
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.radio-play-btn:hover{
+    transform:scale(1.08);
+    background:#fff;
+    color:#000;
+}
+
+.radio-play-green{
+    border-color:#00eb8f;
+}
+
+.radio-play-green:hover{
+    background:#00eb8f;
+    color:#000;
+}
+
+
+/* ==========================================================
+   FULL STATION
+========================================================== */
+
+.full-station-wrap{
+    display:flex;
+    justify-content:center;
+    margin-top:22px;
+}
+
+.full-station-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:18px;
+
+    padding:14px 32px;
+
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:4px;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-size:.68rem;
+    font-weight:800;
+    letter-spacing:2px;
+
+    transition:.25s ease;
+}
+
+.full-station-btn span{
+    color:#00eb8f;
+    font-size:1.4rem;
+}
+
+.full-station-btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+
+/* ==========================================================
+   FOUR PLATFORM LINKS
+========================================================== */
+
+.platform-links-section{
+    padding:15px 7% 55px;
+    background:#050505;
+}
+
+.platform-links-grid{
+    max-width:1400px;
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:14px;
+}
+
+.platform-link-card{
+    display:flex;
+    align-items:center;
+    gap:22px;
+
+    min-height:125px;
+    padding:22px;
+
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:5px;
+
+    background:#080808;
+
+    color:#fff;
+    text-decoration:none;
+
+    transition:.3s ease;
+}
+
+.platform-link-card:hover{
+    transform:translateY(-4px);
+    background:#0d0d0d;
+    border-color:rgba(255,255,255,.32);
+}
+
+.platform-symbol{
+    min-width:46px;
+    font-size:2.7rem;
+    line-height:1;
+}
+
+.platform-link-content h3{
+    font-size:.86rem;
+    letter-spacing:2px;
+    margin-bottom:6px;
+}
+
+.platform-link-content p{
+    color:#c0c0c0;
+    font-size:.7rem;
+    line-height:1.55;
+    margin-bottom:10px;
+}
+
+.platform-action{
+    font-size:.58rem;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.accent-green{
+    color:#00eb8f;
+}
+
+.accent-purple{
+    color:#b73cff;
+}
+
+.accent-blue{
+    color:#35bdff;
+}
+
+.accent-yellow{
+    color:#ffc000;
+}
+
+
+/* ==========================================================
+   RADIO / PLATFORM RESPONSIVE
+========================================================== */
+
+@media(max-width:1000px){
+
+    .radio-grid{
+        grid-template-columns:1fr;
+        max-width:650px;
+    }
+
+    .platform-links-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+}
+
+@media(max-width:600px){
+
+    .radio-section{
+        padding:55px 5% 25px;
+    }
+
+    .radio-heading h2{
+        font-size:1.1rem;
+        letter-spacing:2px;
+    }
+
+    .platform-links-grid{
+        grid-template-columns:1fr;
+    }
+
+    .platform-links-section{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+}
+
+/* ==========================================================
+   RADIO WAVEFORM — PLAYING ANIMATION
+========================================================== */
+
+/* Black History: change white waveform to gold */
+.waveform-white{
+    color:#d4af37;
+}
+
+/* Waveform stays still until its card is playing */
+.radio-waveform span{
+    transform-origin:center;
+}
+
+.radio-waveform span{
+    transform-origin:center;
+    transition:transform .05s linear, opacity .05s linear;
+}
+
+/* Give individual lines different timing so they don't move together */
+.radio-card.is-playing .radio-waveform span:nth-child(2n){
+    animation-duration:.42s;
+}
+
+.radio-card.is-playing .radio-waveform span:nth-child(3n){
+    animation-duration:.78s;
+}
+
+.radio-card.is-playing .radio-waveform span:nth-child(4n){
+    animation-duration:.52s;
+}
+
+.radio-card.is-playing .radio-waveform span:nth-child(5n){
+    animation-duration:.88s;
+}
+
+.radio-card.is-playing .radio-waveform span:nth-child(7n){
+    animation-duration:.36s;
+}
+
+.radio-card.is-playing .radio-waveform span:nth-child(9n){
+    animation-duration:.71s;
+}
+
+@keyframes radioWave{
+    0%{
+        transform:scaleY(.25);
+        opacity:.55;
+    }
+
+    35%{
+        transform:scaleY(.8);
+        opacity:.8;
+    }
+
+    70%{
+        transform:scaleY(1.35);
+        opacity:1;
+    }
+
+    100%{
+        transform:scaleY(.5);
+        opacity:.7;
+    }
+}
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footer-brand {
+    max-width: 620px;
+}
+
+.footer-brand h2 {
+    margin: 0 0 28px;
+
+    color: #fff;
+
+    font-size: clamp(2.2rem, 4vw, 3.1rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.footer-brand h2 sup {
+    position: relative;
+    top: -0.4em;
+
+    margin-left: 4px;
+
+    font-size: 0.42em;
+}
+
+.footer-brand p {
+    max-width: 580px;
+    margin: 0 0 14px;
+
+    color: #8b8b8b;
+
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.footer-brand .footer-brand-intro {
+    margin-bottom: 22px;
+
+    color: #aaa;
+}
+
+.footer-brand .footer-brand-statement {
+    margin-top: 28px;
+    margin-bottom: 0;
+
+    color: #fff;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-brand h2 {
+        margin-bottom: 22px;
+    }
+
+    .footer-brand p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+}

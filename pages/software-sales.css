@@ -1,0 +1,723 @@
+:root {
+    --sales-green: #8cff00;
+    --sales-bg: #050505;
+    --sales-panel: #090909;
+    --sales-line: rgba(255, 255, 255, 0.10);
+    --sales-muted: #8b8b8b;
+    --sales-soft: #b7b7b7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SOFTWARE SALES HERO
+========================================================= */
+
+.sales-hero {
+    min-height: 100vh;
+    padding: 210px 7% 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--sales-line);
+
+    background:
+        radial-gradient(
+            circle at 78% 26%,
+            rgba(140, 255, 0, 0.11),
+            transparent 31%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.015) 25%,
+            transparent 25%
+        ) 0 0 / 36px 36px,
+        var(--sales-bg);
+}
+
+.sales-hero::after {
+    content: "SALES";
+
+    position: absolute;
+    right: -2vw;
+    bottom: 0;
+
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.045);
+
+    font-size: clamp(8rem, 22vw, 23rem);
+    font-weight: 900;
+    line-height: 0.72;
+    letter-spacing: -1.2vw;
+
+    pointer-events: none;
+}
+
+.sales-hero-eyebrow,
+.sales-label,
+.panel-label,
+.curriculum-heading > span,
+.platform-preview-heading > span,
+.sales-cta > span {
+    display: block;
+
+    color: var(--sales-green);
+
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.sales-hero-eyebrow {
+    margin-bottom: 28px;
+}
+
+.sales-hero h1 {
+    max-width: 1250px;
+    margin: 0 0 38px;
+
+    font-size: clamp(4.5rem, 10.5vw, 10rem);
+    line-height: 0.80;
+    font-weight: 900;
+    letter-spacing: -6px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.sales-hero h1 span {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.92);
+}
+
+.sales-hero-intro {
+    max-width: 700px;
+    margin-bottom: 38px;
+
+    color: var(--sales-soft);
+
+    font-size: 1.08rem;
+    line-height: 1.8;
+
+    position: relative;
+    z-index: 2;
+}
+
+.sales-primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    min-height: 54px;
+    padding: 0 30px;
+
+    background: #fff;
+    color: #000;
+
+    border: 1px solid #fff;
+
+    text-decoration: none;
+
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    transition: 0.25s;
+
+    position: relative;
+    z-index: 2;
+}
+
+.sales-primary-button:hover {
+    background: var(--sales-green);
+    border-color: var(--sales-green);
+    color: #000;
+}
+
+
+/* =========================================================
+   SOFTWARE SALES WRAPPER
+========================================================= */
+
+.software-sales {
+    background: var(--sales-bg);
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.software-sales-header {
+    padding: 120px 7%;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 90px;
+    align-items: end;
+
+    border-bottom: 1px solid var(--sales-line);
+}
+
+.sales-label {
+    margin-bottom: 24px;
+}
+
+.software-sales-header h2 {
+    font-size: clamp(4rem, 8vw, 8rem);
+    line-height: 0.82;
+    font-weight: 900;
+    letter-spacing: -5px;
+}
+
+.sales-introduction {
+    max-width: 530px;
+}
+
+.sales-introduction p {
+    color: #929292;
+    line-height: 1.75;
+    margin-bottom: 22px;
+}
+
+.sales-introduction strong {
+    display: block;
+
+    color: #fff;
+
+    font-size: 0.74rem;
+    line-height: 1.6;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   REAL SOFTWARE PANEL
+========================================================= */
+
+.real-software-panel {
+    min-height: 720px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-bottom: 1px solid var(--sales-line);
+}
+
+.real-software-copy {
+    padding: 100px 7%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(140, 255, 0, 0.08),
+            transparent 32%
+        ),
+        #080808;
+}
+
+.panel-label {
+    margin-bottom: 25px;
+}
+
+.real-software-copy h3 {
+    margin-bottom: 34px;
+
+    font-size: clamp(3.4rem, 6.5vw, 6.8rem);
+    line-height: 0.84;
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+.real-software-copy p {
+    max-width: 600px;
+
+    color: #8e8e8e;
+
+    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+.real-software-copy p:first-of-type {
+    color: #fff;
+    font-weight: 700;
+}
+
+.real-software-flow {
+    padding: 80px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    background: #050505;
+}
+
+.real-software-flow > div {
+    min-height: 66px;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #242424;
+
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    transition: 0.25s;
+}
+
+.real-software-flow > div:hover {
+    border-color: var(--sales-green);
+}
+
+.real-software-flow > span {
+    display: block;
+
+    padding: 12px 0;
+
+    color: #4f4f4f;
+
+    text-align: center;
+    font-size: 1.15rem;
+}
+
+.real-software-flow .flow-result {
+    background: var(--sales-green);
+    color: #000;
+    border-color: var(--sales-green);
+}
+
+
+/* =========================================================
+   CURRICULUM
+========================================================= */
+
+.sales-curriculum {
+    padding: 120px 7%;
+
+    border-bottom: 1px solid var(--sales-line);
+}
+
+.curriculum-heading {
+    margin-bottom: 65px;
+}
+
+.curriculum-heading > span {
+    margin-bottom: 22px;
+}
+
+.curriculum-heading h3 {
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    line-height: 0.84;
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+.curriculum-list {
+    border-top: 1px solid var(--sales-line);
+}
+
+.curriculum-item {
+    min-height: 145px;
+    padding: 30px 0;
+
+    display: grid;
+    grid-template-columns: 90px 1fr 1.35fr;
+    gap: 30px;
+    align-items: center;
+
+    border-bottom: 1px solid var(--sales-line);
+
+    transition: 0.25s;
+}
+
+.curriculum-item:hover {
+    padding-left: 16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(140, 255, 0, 0.055),
+            transparent 55%
+        );
+}
+
+.curriculum-item > span {
+    color: var(--sales-green);
+
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.curriculum-item h4 {
+    font-size: clamp(1.45rem, 2.4vw, 2.5rem);
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.curriculum-item p {
+    max-width: 600px;
+
+    color: #828282;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PLATFORM X PREVIEW
+========================================================= */
+
+.sales-platform-preview {
+    padding: 120px 7%;
+
+    position: relative;
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--sales-line);
+
+    background:
+        radial-gradient(
+            circle at 86% 18%,
+            rgba(140, 255, 0, 0.085),
+            transparent 30%
+        ),
+        #070707;
+}
+
+.sales-platform-preview::after {
+    content: "PLATFORM X";
+
+    position: absolute;
+    right: -1vw;
+    bottom: -1vw;
+
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03);
+
+    font-size: clamp(5rem, 13vw, 13rem);
+    font-weight: 900;
+    line-height: 0.78;
+    letter-spacing: -0.7vw;
+
+    pointer-events: none;
+}
+
+.platform-preview-heading {
+    max-width: 950px;
+    margin-bottom: 75px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.platform-preview-heading > span {
+    margin-bottom: 22px;
+}
+
+.platform-preview-heading h3 {
+    font-size: clamp(3.4rem, 7vw, 7rem);
+    line-height: 0.83;
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+.platform-preview-heading p {
+    max-width: 620px;
+    margin-top: 28px;
+
+    color: #8c8c8c;
+
+    line-height: 1.75;
+}
+
+.platform-participants {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--sales-line);
+    border-left: 1px solid var(--sales-line);
+
+    position: relative;
+    z-index: 2;
+}
+
+.participant {
+    min-height: 300px;
+    padding: 34px;
+
+    border-right: 1px solid var(--sales-line);
+    border-bottom: 1px solid var(--sales-line);
+}
+
+.participant > span {
+    color: var(--sales-green);
+
+    font-size: 0.58rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.participant h4 {
+    margin: 70px 0 18px;
+
+    font-size: 2rem;
+    letter-spacing: -1px;
+}
+
+.participant p {
+    color: #858585;
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.platform-core {
+    margin-top: 16px;
+    padding: 38px;
+
+    border: 1px solid var(--sales-green);
+
+    position: relative;
+    z-index: 2;
+}
+
+.platform-core > span {
+    display: block;
+    margin-bottom: 12px;
+
+    color: var(--sales-green);
+
+    font-size: 0.58rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.platform-core h4 {
+    margin-bottom: 14px;
+
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    letter-spacing: -1px;
+}
+
+.platform-core p {
+    color: #9a9a9a;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.sales-cta {
+    padding: 145px 7%;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(140, 255, 0, 0.12),
+            transparent 35%
+        ),
+        #050505;
+}
+
+.sales-cta > span {
+    margin-bottom: 25px;
+}
+
+.sales-cta h3 {
+    font-size: clamp(4rem, 9vw, 9rem);
+    line-height: 0.82;
+    font-weight: 900;
+    letter-spacing: -5px;
+}
+
+.sales-cta p {
+    max-width: 650px;
+    margin: 32px auto 38px;
+
+    color: #8c8c8c;
+
+    line-height: 1.8;
+}
+
+#waitlistButton {
+    min-height: 54px;
+    padding: 0 30px;
+
+    background: #fff;
+    color: #000;
+
+    border: 1px solid #fff;
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    transition: 0.25s;
+}
+
+#waitlistButton:hover {
+    background: var(--sales-green);
+    border-color: var(--sales-green);
+    color: #000;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .sales-hero {
+        padding: 175px 7% 85px;
+    }
+
+    .sales-hero h1,
+    .software-sales-header h2,
+    .real-software-copy h3,
+    .curriculum-heading h3,
+    .platform-preview-heading h3,
+    .sales-cta h3 {
+        letter-spacing: -4px;
+    }
+
+    .software-sales-header,
+    .real-software-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .software-sales-header {
+        gap: 50px;
+    }
+
+    .real-software-copy,
+    .real-software-flow {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .curriculum-item {
+        grid-template-columns: 65px 1fr;
+    }
+
+    .curriculum-item p {
+        grid-column: 2;
+    }
+
+    .platform-participants {
+        grid-template-columns: 1fr;
+    }
+
+    .participant {
+        min-height: 240px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .sales-hero {
+        padding: 150px 6% 75px;
+    }
+
+    .sales-hero h1,
+    .software-sales-header h2,
+    .real-software-copy h3,
+    .curriculum-heading h3,
+    .platform-preview-heading h3,
+    .sales-cta h3 {
+        letter-spacing: -3px;
+    }
+
+    .sales-hero-intro {
+        font-size: 1rem;
+    }
+
+    .software-sales-header,
+    .sales-curriculum,
+    .sales-platform-preview {
+        padding: 85px 6%;
+    }
+
+    .real-software-copy,
+    .real-software-flow {
+        padding: 70px 6%;
+    }
+
+    .curriculum-item {
+        min-height: auto;
+        padding: 28px 0;
+
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .curriculum-item p {
+        grid-column: auto;
+    }
+
+    .curriculum-item:hover {
+        padding-left: 0;
+    }
+
+    .participant {
+        min-height: 220px;
+        padding: 28px;
+    }
+
+    .participant h4 {
+        margin-top: 50px;
+    }
+
+    .platform-core {
+        padding: 28px;
+    }
+
+    .sales-cta {
+        padding: 110px 6%;
+    }
+
+    .sales-primary-button,
+    #waitlistButton {
+        width: 100%;
+    }
+
+}
