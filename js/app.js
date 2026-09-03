@@ -81,18 +81,18 @@ const stories = [
         link:'https://blog.thugcoding.com/post/18/'
     },
     {
-        image:'images/bridge.jpg',
+        image:'images/presentation.jpg',
         tag:'FIELD NOTE 003',
-        title:'THE BRIDGE WALL',
+        title:'Thug Coding<sup>®</sup> Presentation #1',
         sub:'Transit, visibility, and cultural infrastructure.',
-        link:'journal/the-bridge-wall.html'
+        link:'https://blog.thugcoding.com/post/14/'
     },
     {
-        image:'images/technology.jpg',
+        image:'images/fun_about_thug_coding.jpg',
         tag:'MANIFESTO 005',
         title:'YOU ARE TECHNOLOGY',
         sub:'The body, the mind, the code, the uniform.',
-        link:'journal/you-are-technology.html'
+        link:'https://blog.thugcoding.com/post/20/'
     },
     {
         image:'images/serverradio.jpg',
