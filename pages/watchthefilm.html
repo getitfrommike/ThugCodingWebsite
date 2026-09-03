@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Coming Soon — THUG CODING®</title>
+    <title>Film Coming Soon — THUG CODING®</title>
 
     <style>
 
@@ -53,6 +53,7 @@
 
         /* =========================================================
            COMING SOON
+           EXACT SAME GEOMETRY AS MASTER PAGE
         ========================================================= */
 
         .coming-soon {
@@ -88,6 +89,8 @@
         }
 
         .coming-soon h1 {
+            position: relative;
+
             color: #000;
 
             font-size: clamp(1.2rem, 2.2vw, 2rem);
@@ -96,6 +99,40 @@
             letter-spacing: 0.35em;
 
             text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           FILM
+           ABSOLUTELY POSITIONED SO IT DOES NOT MOVE THE LOGO
+        ========================================================= */
+
+        .film-title {
+            position: absolute;
+
+            left: 50%;
+            bottom: calc(100% + 12px);
+
+            transform: translateX(-50%);
+
+            font-size: clamp(1.2rem, 2.2vw, 2rem);
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: 0.35em;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================================
+           GEOMETRY PLACEHOLDER
+
+           Keeps the heading footprint identical to the original
+           Coming Soon page without displaying the email.
+        ========================================================= */
+
+        .geometry-placeholder {
+            visibility: hidden;
         }
 
 
@@ -144,6 +181,13 @@
                 letter-spacing: 0.25em;
             }
 
+            .film-title {
+                bottom: calc(100% + 10px);
+
+                font-size: 1rem;
+                letter-spacing: 0.25em;
+            }
+
             .page-footer {
                 padding: 28px 6%;
 
@@ -179,8 +223,17 @@
             </a>
 
             <h1>
+
+                <span class="film-title">
+                    FILM
+                </span>
+
                 Coming Soon
-                fun@thugcoding.com
+
+                <span class="geometry-placeholder">
+                    fun@thugcoding.com
+                </span>
+
             </h1>
 
         </div>

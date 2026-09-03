@@ -1032,3 +1032,25 @@ footer{
     }
 
 }
+
+/* =========================================================
+   STORY MARQUEE — MANUAL PAN INTERACTION
+========================================================= */
+
+.image-marquee {
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+.image-marquee.is-dragging {
+    cursor: grabbing;
+}
+
+.image-marquee.is-dragging .image-item {
+    pointer-events: none;
+}
+
+.image-track {
+    will-change: transform;
+}
