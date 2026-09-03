@@ -78,7 +78,15 @@ const stories = [
         title:'YOU ARE TECHNOLOGY',
         sub:'The body, the mind, the code, the uniform.',
         link:'journal/you-are-technology.html'
-    }
+    },
+    {
+        image:'images/serverradio.jpg',
+        tag:'SYSTEM FILE 002',
+        title:'THUG CODING RADIO',
+        sub:'Radio infrastructure. Built from the server up.',
+        link:'https://blog.thugcoding.com/post/19/'
+    },
+
 ];
 
 function shuffleArray(array){
