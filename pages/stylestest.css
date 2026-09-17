@@ -211,3 +211,11 @@ nav {
   background: #050505;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
+
+.manifesto-tag {
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin-bottom: 30px;
+  font-size: 0.85rem;
+}
