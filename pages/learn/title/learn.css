@@ -1,0 +1,826 @@
+/* ==========================================================
+   THUG CODING® — LEARN
+   PAGE-SPECIFIC STYLES
+   Shared navigation/footer live in pages.css
+========================================================== */
+
+:root {
+    --learn-blue: #35bdff;
+    --learn-bg: #050505;
+    --learn-panel: #080808;
+    --learn-line: rgba(255, 255, 255, 0.10);
+    --learn-muted: #8b8b8b;
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.learn-hero {
+    min-height: 100vh;
+    padding: 210px 7% 105px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--learn-line);
+
+    background:
+        radial-gradient(
+            circle at 78% 28%,
+            rgba(53, 189, 255, 0.13),
+            transparent 31%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.018) 25%,
+            transparent 25%
+        ) 0 0 / 36px 36px,
+        var(--learn-bg);
+}
+
+.learn-hero::after {
+    content: "LEARN";
+
+    position: absolute;
+    right: -2vw;
+    bottom: 1vw;
+
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.045);
+
+    font-size: clamp(8rem, 23vw, 24rem);
+    font-weight: 900;
+    line-height: 0.7;
+    letter-spacing: -1.3vw;
+
+    pointer-events: none;
+}
+
+.learn-eyebrow {
+    margin-bottom: 28px;
+
+    color: var(--learn-blue);
+
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.learn-hero h1 {
+    max-width: 1250px;
+    margin: 0 0 38px;
+
+    font-size: clamp(4.4rem, 10.5vw, 10rem);
+    line-height: 0.78;
+    font-weight: 900;
+    letter-spacing: -6px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.learn-hero h1 > span {
+    display: block;
+}
+
+.learn-hero h1 .hero-small {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.88);
+
+    font-size: 0.44em;
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.learn-intro {
+    max-width: 690px;
+    margin-bottom: 40px;
+
+    color: #aaa;
+
+    font-size: 1.08rem;
+    line-height: 1.8;
+
+    position: relative;
+    z-index: 2;
+}
+
+.learn-primary-button {
+    width: max-content;
+    min-height: 52px;
+    padding: 0 28px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+
+    background: #fff;
+    color: #000;
+    border: 1px solid #fff;
+
+    text-decoration: none;
+
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    transition: 0.25s ease;
+}
+
+.learn-primary-button:hover {
+    background: var(--learn-blue);
+    border-color: var(--learn-blue);
+    color: #050505;
+}
+
+
+/* ==========================================================
+   LEARNING PATHS
+========================================================== */
+
+.learning-paths {
+    padding: 120px 7%;
+
+    position: relative;
+
+    border-bottom: 1px solid var(--learn-line);
+}
+
+.learn-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 60px;
+
+    margin-bottom: 58px;
+}
+
+.learn-section-heading span {
+    display: block;
+
+    color: var(--learn-blue);
+
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.learn-section-heading h2 {
+    max-width: 900px;
+
+    font-size: clamp(3rem, 6.7vw, 6.7rem);
+    line-height: 0.84;
+    font-weight: 900;
+    letter-spacing: -4px;
+
+    text-align: right;
+}
+
+.learning-path-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    border-top: 1px solid var(--learn-line);
+    border-left: 1px solid var(--learn-line);
+}
+
+.learning-path-card {
+    min-height: 430px;
+    padding: 34px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    overflow: hidden;
+
+    background: var(--learn-panel);
+    color: #fff;
+
+    border-right: 1px solid var(--learn-line);
+    border-bottom: 1px solid var(--learn-line);
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.learning-path-card::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 3px;
+
+    background: var(--learn-blue);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+}
+
+.learning-path-card:hover {
+    background: #0d0d0d;
+    border-color: rgba(53, 189, 255, 0.28);
+}
+
+.learning-path-card:hover::after {
+    transform: scaleX(1);
+}
+
+.path-number {
+    margin-bottom: 70px;
+
+    color: #555;
+
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.learning-path-card h3 {
+    margin-bottom: 22px;
+
+    font-size: clamp(2.5rem, 4vw, 4.4rem);
+    line-height: 0.86;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.learning-path-card p {
+    max-width: 330px;
+
+    color: #858585;
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.path-status,
+.path-enter {
+    position: absolute;
+    left: 34px;
+    bottom: 32px;
+
+    color: #555;
+
+    font-size: 0.58rem;
+    font-weight: 900;
+    letter-spacing: 1.8px;
+}
+
+.path-live {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+
+    color: var(--learn-blue);
+
+    font-size: 0.56rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.software-sales-path {
+    background:
+        radial-gradient(
+            circle at 85% 12%,
+            rgba(53, 189, 255, 0.13),
+            transparent 38%
+        ),
+        #081014;
+}
+
+.software-sales-path:hover {
+    background:
+        radial-gradient(
+            circle at 85% 12%,
+            rgba(53, 189, 255, 0.20),
+            transparent 42%
+        ),
+        #0b151a;
+}
+
+.software-sales-path .path-enter {
+    color: var(--learn-blue);
+}
+
+
+/* ==========================================================
+   SOFTWARE SALES — SUPPORTING STYLES
+   Retained for compatibility with existing LEARN components.
+========================================================== */
+
+.software-sales {
+    border-top: 1px solid var(--learn-line);
+}
+
+.software-sales-header {
+    padding: 120px 7%;
+
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 80px;
+    align-items: end;
+}
+
+.sales-label,
+.panel-label {
+    display: block;
+    margin-bottom: 25px;
+
+    color: var(--learn-blue);
+
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.software-sales-header h2 {
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.8;
+    font-weight: 900;
+    letter-spacing: -5px;
+}
+
+.sales-introduction {
+    max-width: 450px;
+}
+
+.sales-introduction p {
+    margin-bottom: 20px;
+
+    color: #888;
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.sales-introduction strong {
+    font-size: 0.78rem;
+    line-height: 1.6;
+    letter-spacing: 1.5px;
+}
+
+
+/* ==========================================================
+   REAL SOFTWARE PANEL
+========================================================== */
+
+.real-software-panel {
+    margin: 0 7% 120px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border: 1px solid var(--learn-line);
+}
+
+.real-software-copy {
+    padding: 70px;
+
+    border-right: 1px solid var(--learn-line);
+}
+
+.real-software-copy h3 {
+    margin-bottom: 30px;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.85;
+    font-weight: 900;
+    letter-spacing: -3px;
+}
+
+.real-software-copy p {
+    max-width: 520px;
+    margin-bottom: 16px;
+
+    color: #999;
+
+    line-height: 1.7;
+}
+
+.real-software-flow {
+    padding: 55px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    text-align: center;
+}
+
+.real-software-flow div {
+    width: 100%;
+    max-width: 340px;
+    padding: 15px 20px;
+
+    border: 1px solid var(--learn-line);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.real-software-flow span {
+    color: #555;
+}
+
+.real-software-flow .flow-result {
+    border-color: var(--learn-blue);
+    color: var(--learn-blue);
+}
+
+
+/* ==========================================================
+   CURRICULUM
+========================================================== */
+
+.sales-curriculum {
+    padding: 120px 7%;
+
+    background: var(--learn-panel);
+}
+
+.curriculum-heading {
+    margin-bottom: 60px;
+}
+
+.curriculum-heading span {
+    color: var(--learn-blue);
+
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.curriculum-heading h3 {
+    margin-top: 20px;
+
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: 0.85;
+    letter-spacing: -4px;
+}
+
+.curriculum-list {
+    border-top: 1px solid var(--learn-line);
+}
+
+.curriculum-item {
+    padding: 30px 0;
+
+    display: grid;
+    grid-template-columns: 80px 1fr 1.2fr;
+    gap: 30px;
+    align-items: center;
+
+    border-bottom: 1px solid var(--learn-line);
+}
+
+.curriculum-item > span {
+    color: #555;
+
+    font-size: 0.65rem;
+}
+
+.curriculum-item h4 {
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+}
+
+.curriculum-item p {
+    max-width: 550px;
+
+    color: #777;
+
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   PLATFORM
+========================================================== */
+
+.sales-platform-preview {
+    padding: 120px 7%;
+}
+
+.platform-preview-heading {
+    max-width: 850px;
+    margin-bottom: 70px;
+}
+
+.platform-preview-heading > span {
+    color: var(--learn-blue);
+
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.platform-preview-heading h3 {
+    margin: 20px 0 30px;
+
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: 0.85;
+    letter-spacing: -4px;
+}
+
+.platform-preview-heading p {
+    max-width: 650px;
+
+    color: #888;
+
+    line-height: 1.7;
+}
+
+.platform-participants {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border: 1px solid var(--learn-line);
+}
+
+.participant {
+    min-height: 240px;
+    padding: 35px;
+
+    border-right: 1px solid var(--learn-line);
+}
+
+.participant:last-child {
+    border-right: none;
+}
+
+.participant span {
+    color: #555;
+    font-size: 0.6rem;
+}
+
+.participant h4 {
+    margin: 45px 0 15px;
+
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.participant p {
+    color: #777;
+
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.platform-core {
+    padding: 40px;
+
+    border: 1px solid var(--learn-blue);
+    border-top: none;
+}
+
+.platform-core span {
+    color: var(--learn-blue);
+
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.platform-core h4 {
+    margin: 12px 0;
+
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.platform-core p {
+    color: #777;
+
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.sales-cta {
+    padding: 130px 7%;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    border-top: 1px solid var(--learn-line);
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(53, 189, 255, 0.09),
+            transparent 36%
+        ),
+        var(--learn-bg);
+}
+
+.sales-cta > span {
+    color: var(--learn-blue);
+
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.sales-cta h3 {
+    margin: 30px 0;
+
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.8;
+    font-weight: 900;
+    letter-spacing: -5px;
+}
+
+.sales-cta p {
+    margin-bottom: 35px;
+
+    color: #888;
+}
+
+.sales-cta button {
+    min-height: 52px;
+    padding: 0 32px;
+
+    border: 1px solid #fff;
+    background: #fff;
+    color: #000;
+
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.sales-cta button:hover {
+    background: var(--learn-blue);
+    border-color: var(--learn-blue);
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .learn-hero {
+        padding: 175px 7% 80px;
+    }
+
+    .learn-hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .learn-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .learn-section-heading h2 {
+        text-align: left;
+    }
+
+    .learning-path-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .software-sales-header,
+    .real-software-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .real-software-copy {
+        border-right: none;
+        border-bottom: 1px solid var(--learn-line);
+    }
+
+    .platform-participants {
+        grid-template-columns: 1fr;
+    }
+
+    .participant {
+        border-right: none;
+        border-bottom: 1px solid var(--learn-line);
+    }
+
+    .participant:last-child {
+        border-bottom: none;
+    }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .learn-hero {
+        min-height: 100svh;
+        padding: 155px 6% 80px;
+        justify-content: center;
+    }
+
+    .learn-hero h1 {
+        font-size: clamp(3.6rem, 18vw, 6rem);
+        letter-spacing: -3px;
+    }
+
+    .learn-hero h1 .hero-small {
+        letter-spacing: -1px;
+    }
+
+    .learn-intro {
+        font-size: 1rem;
+    }
+
+    .learning-paths {
+        padding: 85px 6%;
+    }
+
+    .learn-section-heading h2,
+    .software-sales-header h2,
+    .real-software-copy h3,
+    .curriculum-heading h3,
+    .platform-preview-heading h3,
+    .sales-cta h3 {
+        letter-spacing: -3px;
+    }
+
+    .learning-path-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-path-card {
+        min-height: 380px;
+        padding: 30px;
+    }
+
+    .path-status,
+    .path-enter {
+        left: 30px;
+    }
+
+    .software-sales-header,
+    .sales-curriculum,
+    .sales-platform-preview,
+    .sales-cta {
+        padding: 85px 6%;
+    }
+
+    .real-software-panel {
+        margin: 0 6% 85px;
+    }
+
+    .real-software-copy,
+    .real-software-flow {
+        padding: 42px 30px;
+    }
+
+    .curriculum-item {
+        grid-template-columns: 45px 1fr;
+        gap: 18px;
+    }
+
+    .curriculum-item p {
+        grid-column: 2;
+    }
+
+    .platform-core {
+        padding: 30px;
+    }
+}
