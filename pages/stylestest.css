@@ -204,3 +204,10 @@ nav {
     rgba(0, 0, 0, 0.45)
   );
 }
+
+/* MANIFESTO */
+.manifesto {
+  padding: 100px 7% 120px;
+  background: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
