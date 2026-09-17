@@ -581,7 +581,7 @@ footer {
   }
 
   .manifesto h1 {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 10vw, 4rem);
   }
 }
 
