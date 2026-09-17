@@ -1165,3 +1165,28 @@ footer {
 .image-track {
   will-change: transform;
 }
+
+/* ==========================================================
+   MOBILE HEADER — FINAL ALIGNMENT
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .mobile-menu {
+        width: 100%;
+    }
+
+    .mobile-menu summary {
+        list-style: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .mobile-menu summary::marker {
+        display: none;
+        content: "";
+    }
+}
