@@ -205,7 +205,11 @@ nav {
   );
 }
 
-/* MANIFESTO */
+/* 
+==========================================================
+MANIFESTO
+========================================================== */
+
 .manifesto {
   padding: 100px 7% 120px;
   background: #050505;
@@ -218,4 +222,13 @@ nav {
   letter-spacing: 6px;
   margin-bottom: 30px;
   font-size: 0.85rem;
+}
+
+.manifesto h1 {
+  font-size: clamp(4rem, 11vw, 10rem);
+  line-height: 0.84;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  text-shadow: 0 0 30px rgba(0, 0, 0, 0.45);
 }
