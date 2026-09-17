@@ -140,7 +140,29 @@ nav {
     content: "×";
     font-size: 1.25rem;
   }
-}
+
+
+  .mobile-menu-links {
+    display: grid;
+    padding: 2px 0 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-menu-links a {
+    padding: 13px 0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .mobile-menu-links a:last-child {
+    border-bottom: 0;
+  }
+
+}  
 
 /* ==========================================================
    HERO
