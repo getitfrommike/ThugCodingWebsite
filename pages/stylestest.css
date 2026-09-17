@@ -80,9 +80,36 @@ nav {
   display: none;
 }
 
+/* ==========================================================
+ MOBILE NAVIGATION
+========================================================== */
+
 @media (max-width: 900px) {
+  nav {
+    flex-wrap: wrap;
+    row-gap: 0;
+  }
+
+  .logo {
+    order: 1;
+  }
+
   .nav-links {
     display: none;
+  }
+
+  .nav-btn {
+    order: 2;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .mobile-menu {
+    display: block;
+    order: 3;
+    width: auto;
+    margin: 0 0 0 18px;
+    border-top: 0;
   }
 }
 
