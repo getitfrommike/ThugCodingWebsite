@@ -111,6 +111,35 @@ nav {
     margin: 0 0 0 18px;
     border-top: 0;
   }
+
+  .mobile-menu summary {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .mobile-menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .mobile-menu[open] .mobile-menu-icon {
+    font-size: 0;
+  }
+
+  .mobile-menu[open] .mobile-menu-icon::after {
+    content: "×";
+    font-size: 1.25rem;
+  }
 }
 
 /* ==========================================================
