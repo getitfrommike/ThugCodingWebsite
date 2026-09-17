@@ -60,18 +60,18 @@ const stories = [
         link:'journal/magnolia-square.html'
     },
     {
-        image:'images/imperial-hwy.jpg',
+        image:'images/devi.jpg',
         tag:'FIELD NOTE 008',
-        title:'IMPERIAL HIGHWAY',
+        title:'THE INTERNET OF FASHION',
         sub:'A route carved by systems.',
         link:'journal/imperial-highway.html'
     },
     {
-        image:'images/main-street.jpg',
+        image:'images/manifesto001.jpg',
         tag:'FIELD NOTE 009',
-        title:'MAIN STREET',
+        title:'MANIFESTO 001',
         sub:'The core. The origin. The return point.',
-        link:'journal/main-street.html'
+        link:'https://blog.thugcoding.com/post/21/'
     },
     {
         image:'images/api-spacesuit.jpg',

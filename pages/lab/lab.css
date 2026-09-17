@@ -1,0 +1,3699 @@
+/* ==========================================================================
+   THUG CODING® LAB
+   COMPLETE LIGHT COLLEGIATE DESIGN SYSTEM
+   Applies to: pages/lab/title/thugcoding_downloading.html
+   ========================================================================== */
+
+:root{
+    --lab-paper:#f4f1e8;
+    --lab-paper-bright:#fffdf8;
+    --lab-paper-dark:#ebe6da;
+    --lab-paper-blue:#edf2f6;
+    --lab-ink:#121212;
+    --lab-navy:#101c2d;
+    --lab-blue:#173f73;
+    --lab-red:#8d2330;
+    --lab-gold:#c59a35;
+    --lab-gold-light:#e4c46d;
+    --lab-muted:#66645f;
+    --lab-muted-light:#8b887f;
+    --lab-line:rgba(18,18,18,.18);
+    --lab-soft-line:rgba(18,18,18,.09);
+    --lab-white-line:rgba(255,255,255,.18);
+    --lab-serif:"Libre Baskerville", Georgia, "Times New Roman", serif;
+    --lab-sans:"Inter", Arial, Helvetica, sans-serif;
+    --lab-mono:Consolas, "Courier New", monospace;
+    --lab-max:1500px;
+    --lab-copy:760px;
+    --lab-pad:clamp(24px,6vw,92px);
+}
+
+/* ==========================================================================
+   01 / NAV
+   ========================================================================== */
+
+.page-nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+
+    padding:22px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#050505;
+    color:#fff;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.page-logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+}
+
+.page-logo img{
+    display:block;
+    width:240px;
+    height:auto;
+}
+
+.page-nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.page-nav-links a{
+    position:relative;
+    color:#fff;
+    text-decoration:none;
+
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.12em;
+}
+
+.page-nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:var(--lab-gold);
+
+    transition:width .2s ease;
+}
+
+.page-nav-links a:hover::after,
+.page-nav-links a.active::after{
+    width:100%;
+}
+
+.page-nav-links a.active{
+    color:var(--lab-gold-light);
+}
+
+/* ==========================================================================
+   01 / RESET + PAGE BASE
+   ========================================================================== */
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    background:var(--lab-paper);
+}
+
+body{
+    margin:0;
+    background:var(--lab-paper);
+    color:var(--lab-ink);
+    font-family:var(--lab-sans);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+}
+
+main{
+    width:100%;
+    background:var(--lab-paper);
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    color:inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+blockquote{
+    margin-top:0;
+}
+
+button,
+input,
+textarea,
+select{
+    font:inherit;
+}
+
+::selection{
+    background:var(--lab-gold-light);
+    color:var(--lab-ink);
+}
+
+/* Registered mark used in visible THUG CODING brand text */
+sup{
+    position:relative;
+    top:-1em;
+    font-size:.30em;
+    line-height:0;
+    vertical-align:super;
+    letter-spacing:0;
+    font-family:var(--lab-sans);
+    font-weight:800;
+}
+
+/* ==========================================================================
+   02 / SHARED NAV OVERRIDES
+   Keeps the site navigation black and consistent on the light LAB page.
+   ========================================================================== */
+
+.page-nav{
+    background:#050505;
+    color:#fff;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.page-nav a{
+    color:#fff;
+}
+
+.page-nav-links a.active{
+    color:var(--lab-gold-light);
+}
+
+/* ==========================================================================
+   03 / TITLE HERO
+   ========================================================================== */
+
+.title-hero{
+    position:relative;
+    min-height:100vh;
+    padding:clamp(150px,17vh,220px) var(--lab-pad) clamp(90px,11vw,160px);
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:
+        linear-gradient(rgba(197,154,53,.05),rgba(197,154,53,.05)),
+        var(--lab-paper-bright);
+    border-bottom:1px solid var(--lab-line);
+}
+
+.title-hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:var(--lab-pad);
+    right:var(--lab-pad);
+    height:7px;
+    background:var(--lab-gold);
+}
+
+.title-hero-grid,
+.learn-funnel-grid{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:.34;
+    background-image:
+        linear-gradient(var(--lab-soft-line) 1px,transparent 1px),
+        linear-gradient(90deg,var(--lab-soft-line) 1px,transparent 1px);
+    background-size:44px 44px;
+    mask-image:linear-gradient(to bottom,rgba(0,0,0,.55),transparent 82%);
+}
+
+.title-hero-content{
+    position:relative;
+    z-index:2;
+    width:min(100%,var(--lab-max));
+    margin:0 auto;
+}
+
+.title-breadcrumb,
+.title-status-row{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:.7rem;
+    font-weight:800;
+    letter-spacing:.17em;
+    text-transform:uppercase;
+}
+
+.title-breadcrumb{
+    margin-bottom:34px;
+    color:var(--lab-muted);
+}
+
+.title-breadcrumb a{
+    text-decoration:none;
+    color:var(--lab-blue);
+}
+
+.title-breadcrumb a:hover{
+    text-decoration:underline;
+}
+
+.title-status-row{
+    margin-bottom:34px;
+    color:var(--lab-muted);
+}
+
+.title-status{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    color:var(--lab-red);
+}
+
+.title-status i{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--lab-red);
+    box-shadow:0 0 0 5px rgba(141,35,48,.09);
+}
+
+.title-hero h1{
+    max-width:1100px;
+    margin:0;
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(3.7rem,8.2vw,9rem);
+    line-height:.88;
+    letter-spacing:-.055em;
+    text-transform:uppercase;
+}
+
+.title-hero h1 > span{
+    display:block;
+    color:var(--lab-red);
+}
+
+.title-hero-statement{
+    max-width:980px;
+    margin:48px 0 0;
+    padding-top:26px;
+    border-top:1px solid var(--lab-line);
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.4rem,2.7vw,2.65rem);
+    line-height:1.25;
+    font-weight:700;
+}
+
+.title-hero-copy{
+    max-width:720px;
+    margin:28px 0 0;
+    color:var(--lab-muted);
+    font-size:clamp(1rem,1.4vw,1.18rem);
+    line-height:1.8;
+}
+
+.title-hero-lines{
+    margin-top:44px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.title-hero-lines span{
+    padding:10px 13px;
+    border:1px solid var(--lab-line);
+    background:rgba(255,255,255,.55);
+    color:var(--lab-ink);
+    font-size:.68rem;
+    font-weight:900;
+    letter-spacing:.1em;
+}
+
+.title-hero-final{
+    display:block;
+    max-width:900px;
+    margin-top:28px;
+    color:var(--lab-red);
+    font-size:clamp(.9rem,1.5vw,1.18rem);
+    letter-spacing:.08em;
+    line-height:1.55;
+}
+
+.title-hero-index{
+    position:absolute;
+    right:var(--lab-pad);
+    bottom:30px;
+    color:rgba(16,28,45,.09);
+    font-family:var(--lab-serif);
+    font-size:clamp(6rem,15vw,14rem);
+    font-weight:700;
+    line-height:.75;
+    pointer-events:none;
+}
+
+/* ==========================================================================
+   04 / SHARED TITLE SECTIONS
+   ========================================================================== */
+
+.title-section{
+    position:relative;
+    display:grid;
+    grid-template-columns:minmax(72px,120px) minmax(0,1fr);
+    gap:clamp(24px,4vw,70px);
+    padding:clamp(90px,10vw,150px) var(--lab-pad);
+    background:var(--lab-paper);
+    border-bottom:1px solid var(--lab-line);
+}
+
+.title-section:nth-of-type(even){
+    background:var(--lab-paper-bright);
+}
+
+.title-section-dark{
+    background:var(--lab-paper-dark);
+}
+
+.title-section-grid{
+    background:
+        linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 43px,
+            var(--lab-soft-line) 44px
+        ),
+        var(--lab-paper);
+}
+
+.title-section-number{
+    color:var(--lab-gold);
+    font-family:var(--lab-serif);
+    font-size:clamp(2.1rem,4vw,4rem);
+    font-weight:700;
+    line-height:1;
+}
+
+.title-section-content{
+    width:min(100%,1300px);
+}
+
+.title-kicker,
+.product-definition-kicker{
+    display:block;
+    margin-bottom:22px;
+    color:var(--lab-red);
+    font-size:.68rem;
+    font-weight:900;
+    letter-spacing:.19em;
+    text-transform:uppercase;
+}
+
+.title-section h2,
+.learn-funnel h2{
+    margin:0;
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(2.7rem,6vw,6.7rem);
+    line-height:.94;
+    letter-spacing:-.045em;
+    text-transform:uppercase;
+}
+
+.title-section h2 > span{
+    color:var(--lab-red);
+}
+
+.section-intro{
+    max-width:780px;
+    margin:30px 0 0;
+    color:var(--lab-muted);
+    font-size:clamp(1.05rem,1.7vw,1.35rem);
+    line-height:1.75;
+}
+
+/* ==========================================================================
+   05 / WHAT WE BUILT
+   ========================================================================== */
+
+.title-copy-grid{
+    margin-top:54px;
+    display:grid;
+    grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+    gap:clamp(35px,6vw,100px);
+    padding-top:38px;
+    border-top:1px solid var(--lab-line);
+}
+
+.title-lead p{
+    margin:0;
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.3rem,2.2vw,2rem);
+    line-height:1.55;
+}
+
+.title-body-copy p{
+    margin:0 0 18px;
+    color:var(--lab-muted);
+    font-size:1rem;
+    line-height:1.8;
+}
+
+.title-body-copy strong{
+    display:block;
+    margin-top:28px;
+    color:var(--lab-blue);
+    font-size:.78rem;
+    letter-spacing:.13em;
+}
+
+/* ==========================================================================
+   06 / PRODUCT WINDOW
+   ========================================================================== */
+
+.product-window{
+    margin-top:70px;
+    overflow:hidden;
+    border:1px solid rgba(16,28,45,.24);
+    background:var(--lab-paper-bright);
+    box-shadow:0 25px 70px rgba(16,28,45,.08);
+}
+
+.product-window-bar{
+    min-height:48px;
+    padding:0 18px;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    gap:18px;
+    background:var(--lab-navy);
+    color:#fff;
+    font-family:var(--lab-mono);
+    font-size:.68rem;
+    letter-spacing:.08em;
+}
+
+.product-window-bar > span:last-child{
+    justify-self:end;
+    color:var(--lab-gold-light);
+}
+
+.window-dots{
+    display:flex;
+    gap:7px;
+}
+
+.window-dots span{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:rgba(255,255,255,.32);
+}
+
+.window-dots span:first-child{
+    background:var(--lab-red);
+}
+
+.window-dots span:nth-child(2){
+    background:var(--lab-gold);
+}
+
+.product-window-body{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+}
+
+.product-window-copy{
+    padding:clamp(34px,5vw,70px);
+}
+
+.product-window-copy > span{
+    color:var(--lab-red);
+    font-size:.64rem;
+    font-weight:900;
+    letter-spacing:.16em;
+}
+
+.product-window-copy > strong{
+    display:block;
+    margin:12px 0 28px;
+    color:var(--lab-blue);
+    font-family:var(--lab-serif);
+    font-size:1.2rem;
+}
+
+.product-window-copy h3{
+    margin:22px 0;
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(2rem,4vw,4rem);
+    line-height:1;
+}
+
+.product-window-copy p{
+    max-width:590px;
+    color:var(--lab-muted);
+    line-height:1.75;
+}
+
+.product-terminal{
+    min-height:100%;
+    padding:clamp(34px,5vw,70px);
+    background:#0d1725;
+    color:#dbe4ef;
+    font-family:var(--lab-mono);
+    font-size:clamp(.78rem,1.1vw,.95rem);
+}
+
+.product-terminal p{
+    margin:0 0 18px;
+    line-height:1.55;
+}
+
+.product-terminal span{
+    color:var(--lab-gold-light);
+}
+
+.product-terminal .success{
+    margin-top:30px;
+    color:#fff;
+    font-weight:700;
+}
+
+/* ==========================================================================
+   07 / WHY
+   ========================================================================== */
+
+.large-question{
+    max-width:960px;
+    margin:48px 0 0;
+    padding:28px 0;
+    border-top:3px solid var(--lab-navy);
+    border-bottom:1px solid var(--lab-line);
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.35rem,2.6vw,2.5rem);
+    line-height:1.35;
+    font-weight:700;
+}
+
+.question-grid{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    border-top:1px solid var(--lab-line);
+    border-left:1px solid var(--lab-line);
+}
+
+.question-grid > div{
+    min-height:110px;
+    padding:28px;
+    display:flex;
+    align-items:center;
+    border-right:1px solid var(--lab-line);
+    border-bottom:1px solid var(--lab-line);
+    background:rgba(255,255,255,.32);
+    color:var(--lab-ink);
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    line-height:1.55;
+}
+
+.title-callout{
+    margin-top:58px;
+    padding:34px;
+    border-left:7px solid var(--lab-red);
+    background:var(--lab-paper-bright);
+}
+
+.title-callout > span{
+    color:var(--lab-red);
+    font-size:.65rem;
+    font-weight:900;
+    letter-spacing:.16em;
+}
+
+.title-callout p{
+    max-width:780px;
+    margin:14px 0;
+    color:var(--lab-muted);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.1rem,1.7vw,1.45rem);
+    line-height:1.65;
+}
+
+.title-callout strong{
+    color:var(--lab-navy);
+    letter-spacing:.08em;
+}
+
+/* ==========================================================================
+   08 / PROBLEM
+   ========================================================================== */
+
+.problem-layout{
+    margin-top:55px;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(300px,.72fr);
+    gap:clamp(40px,7vw,110px);
+    align-items:start;
+}
+
+.problem-copy p{
+    max-width:720px;
+    color:var(--lab-muted);
+    font-size:1.05rem;
+    line-height:1.85;
+}
+
+.problem-copy strong{
+    display:block;
+    margin-top:28px;
+    color:var(--lab-red);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.4rem,2.2vw,2.2rem);
+}
+
+.problem-stack{
+    border-top:5px solid var(--lab-navy);
+}
+
+.problem-stack span{
+    display:block;
+    padding:16px 4px;
+    border-bottom:1px solid var(--lab-line);
+    color:var(--lab-navy);
+    font-size:.72rem;
+    font-weight:900;
+    letter-spacing:.12em;
+}
+
+.lab-quote{
+    max-width:1050px;
+    margin:70px 0 0;
+    padding:38px 0 0;
+    border-top:1px solid var(--lab-line);
+    color:var(--lab-blue);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.7rem,3.5vw,3.8rem);
+    line-height:1.15;
+    font-weight:700;
+}
+
+/* ==========================================================================
+   09 / SYSTEM FLOW
+   ========================================================================== */
+
+.system-flow{
+    margin-top:60px;
+    max-width:850px;
+    display:flex;
+    flex-direction:column;
+}
+
+.flow-node{
+    min-height:82px;
+    padding:20px 24px;
+    display:grid;
+    grid-template-columns:55px 1fr;
+    align-items:center;
+    border:1px solid var(--lab-line);
+    background:rgba(255,255,255,.66);
+}
+
+.flow-node small{
+    color:var(--lab-gold);
+    font-family:var(--lab-serif);
+    font-weight:700;
+}
+
+.flow-node strong{
+    color:var(--lab-navy);
+    font-size:.8rem;
+    letter-spacing:.11em;
+}
+
+.flow-node.active{
+    border-color:var(--lab-blue);
+    background:var(--lab-paper-blue);
+}
+
+.flow-node.final{
+    border-color:var(--lab-navy);
+    background:var(--lab-navy);
+}
+
+.flow-node.final strong{
+    color:#fff;
+}
+
+.flow-arrow{
+    height:34px;
+    padding-left:26px;
+    display:flex;
+    align-items:center;
+    color:var(--lab-red);
+    font-weight:900;
+}
+
+.idea-explanation{
+    margin-top:65px;
+    max-width:920px;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:0 55px;
+    border-top:1px solid var(--lab-line);
+}
+
+.idea-explanation p{
+    margin:0;
+    padding:24px 0;
+    border-bottom:1px solid var(--lab-line);
+    color:var(--lab-muted);
+    line-height:1.7;
+}
+
+.idea-explanation strong{
+    color:var(--lab-blue);
+}
+
+.system-statement{
+    max-width:980px;
+    margin:65px 0 0;
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.8rem,3.6vw,4rem);
+    line-height:1.12;
+    font-weight:700;
+}
+
+.system-statement span{
+    display:block;
+    color:var(--lab-red);
+}
+
+/* ==========================================================================
+   10 / HOW IT WORKS
+   ========================================================================== */
+
+.how-grid{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    border-top:1px solid var(--lab-line);
+    border-left:1px solid var(--lab-line);
+}
+
+.how-grid article{
+    min-height:250px;
+    padding:30px;
+    border-right:1px solid var(--lab-line);
+    border-bottom:1px solid var(--lab-line);
+    background:rgba(255,255,255,.38);
+}
+
+.how-grid article > span,
+.discipline-list article > span{
+    color:var(--lab-gold);
+    font-family:var(--lab-serif);
+    font-weight:700;
+}
+
+.how-grid h3,
+.discipline-list h3{
+    margin:50px 0 12px;
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:1.3rem;
+}
+
+.how-grid p,
+.discipline-list p{
+    margin:0;
+    color:var(--lab-muted);
+    line-height:1.7;
+}
+
+.clarity-block{
+    margin-top:70px;
+    padding:clamp(34px,5vw,65px);
+    background:var(--lab-navy);
+    color:#fff;
+}
+
+.clarity-block > span{
+    color:var(--lab-gold-light);
+    font-size:.65rem;
+    font-weight:900;
+    letter-spacing:.17em;
+}
+
+.clarity-block p{
+    margin:24px 0 0;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--lab-white-line);
+    font-family:var(--lab-mono);
+    font-size:.82rem;
+}
+
+.clarity-block .clarity-ready{
+    color:var(--lab-gold-light);
+}
+
+.clarity-block > strong{
+    display:block;
+    margin-top:34px;
+    font-family:var(--lab-serif);
+    font-size:clamp(1.4rem,2.6vw,2.7rem);
+    line-height:1.3;
+}
+
+/* ==========================================================================
+   11 / DISCIPLINES
+   ========================================================================== */
+
+.discipline-list{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    border-top:1px solid var(--lab-line);
+    border-left:1px solid var(--lab-line);
+}
+
+.discipline-list article{
+    min-height:245px;
+    padding:28px;
+    border-right:1px solid var(--lab-line);
+    border-bottom:1px solid var(--lab-line);
+    background:rgba(255,255,255,.3);
+}
+
+.big-lesson{
+    max-width:1080px;
+    margin:70px 0 0;
+    padding-top:35px;
+    border-top:5px solid var(--lab-navy);
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.6rem,3.3vw,3.5rem);
+    line-height:1.15;
+    font-weight:700;
+}
+
+.big-lesson span{
+    display:block;
+    color:var(--lab-red);
+}
+
+/* ==========================================================================
+   12 / WHAT WE LEARNED
+   ========================================================================== */
+
+.shipping-question{
+    margin-top:55px;
+    padding:28px 0;
+    border-top:4px solid var(--lab-navy);
+    border-bottom:1px solid var(--lab-line);
+}
+
+.shipping-question span,
+.version-lesson > span{
+    color:var(--lab-red);
+    font-size:.65rem;
+    font-weight:900;
+    letter-spacing:.16em;
+}
+
+.shipping-question p{
+    margin:12px 0 0;
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.7rem,3.4vw,3.5rem);
+    font-weight:700;
+}
+
+.shipping-questions{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    border-left:1px solid var(--lab-line);
+}
+
+.shipping-questions p{
+    margin:0;
+    min-height:86px;
+    padding:24px;
+    display:flex;
+    align-items:center;
+    border-right:1px solid var(--lab-line);
+    border-bottom:1px solid var(--lab-line);
+    color:var(--lab-ink);
+    font-size:.75rem;
+    font-weight:800;
+    letter-spacing:.07em;
+}
+
+.version-lesson{
+    margin-top:70px;
+    max-width:900px;
+    padding:36px;
+    border:1px solid var(--lab-line);
+    background:var(--lab-paper-bright);
+}
+
+.version-lesson h3{
+    margin:15px 0 22px;
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.7rem,3vw,3rem);
+}
+
+.version-lesson p{
+    color:var(--lab-muted);
+    line-height:1.75;
+}
+
+.iteration-flow{
+    margin-top:55px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:12px;
+}
+
+.iteration-flow span{
+    padding:12px 15px;
+    border:1px solid var(--lab-line);
+    background:rgba(255,255,255,.55);
+    color:var(--lab-navy);
+    font-size:.7rem;
+    font-weight:900;
+    letter-spacing:.08em;
+}
+
+.iteration-flow b{
+    color:var(--lab-red);
+}
+
+/* ==========================================================================
+   13 / BUILDER
+   ========================================================================== */
+
+.builder-section{
+    background:var(--lab-paper-bright);
+}
+
+.build-ideas{
+    margin-top:50px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+}
+
+.build-ideas span{
+    padding:11px 14px;
+    border:1px solid var(--lab-line);
+    color:var(--lab-blue);
+    background:var(--lab-paper);
+    font-size:.67rem;
+    font-weight:900;
+    letter-spacing:.1em;
+}
+
+.builder-copy{
+    max-width:920px;
+    margin:60px 0 0;
+    color:var(--lab-muted);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.3rem,2.3vw,2.2rem);
+    line-height:1.5;
+}
+
+.builder-copy strong{
+    color:var(--lab-navy);
+}
+
+.builder-question{
+    margin-top:60px;
+    padding:25px 0;
+    border-top:5px solid var(--lab-red);
+    border-bottom:1px solid var(--lab-line);
+    color:var(--lab-red);
+    font-size:.8rem;
+    font-weight:900;
+    letter-spacing:.15em;
+}
+
+.builder-flow{
+    max-width:760px;
+    margin-top:35px;
+}
+
+.builder-flow p{
+    margin:0;
+    padding:18px 20px;
+    border:1px solid var(--lab-line);
+    background:var(--lab-paper);
+    color:var(--lab-navy);
+    font-weight:900;
+    letter-spacing:.08em;
+}
+
+.builder-flow span{
+    display:block;
+    padding:7px 20px;
+    color:var(--lab-red);
+}
+
+.builder-ending{
+    margin-top:70px;
+    padding-top:36px;
+    border-top:1px solid var(--lab-line);
+}
+
+.builder-ending > span{
+    display:block;
+    max-width:760px;
+    color:var(--lab-muted);
+    font-size:.82rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    line-height:1.7;
+}
+
+.builder-ending h3{
+    margin:18px 0 0;
+    color:var(--lab-red);
+    font-family:var(--lab-serif);
+    font-size:clamp(4rem,10vw,10rem);
+    line-height:.85;
+}
+
+/* ==========================================================================
+   14 / LAB → LEARN CONVERSION
+   ========================================================================== */
+
+.learn-funnel{
+    position:relative;
+    padding:clamp(100px,12vw,175px) var(--lab-pad);
+    overflow:hidden;
+    background:var(--lab-navy);
+    color:#fff;
+    border-bottom:8px solid var(--lab-gold);
+}
+
+.learn-funnel-grid{
+    opacity:.16;
+    background-image:
+        linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px);
+}
+
+.learn-funnel-content{
+    position:relative;
+    z-index:2;
+    width:min(100%,1100px);
+    margin:0 auto;
+}
+
+.learn-funnel .title-kicker{
+    color:var(--lab-gold-light);
+}
+
+.learn-pretitle{
+    margin:35px 0 15px;
+    color:rgba(255,255,255,.62);
+    font-size:.74rem;
+    font-weight:900;
+    letter-spacing:.13em;
+}
+
+.learn-funnel h2{
+    color:#fff;
+}
+
+.learn-funnel h2 span{
+    color:var(--lab-gold-light);
+}
+
+.learn-funnel-content > p:not(.learn-pretitle){
+    max-width:800px;
+    margin:28px 0 0;
+    color:rgba(255,255,255,.73);
+    font-size:1.05rem;
+    line-height:1.8;
+}
+
+.learn-funnel-content > strong{
+    display:block;
+    max-width:850px;
+    margin-top:32px;
+    color:#fff;
+    font-family:var(--lab-serif);
+    font-size:clamp(1.25rem,2vw,1.9rem);
+    line-height:1.5;
+}
+
+.learn-points{
+    margin-top:48px;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    border-top:1px solid var(--lab-white-line);
+    border-left:1px solid var(--lab-white-line);
+}
+
+.learn-points span{
+    padding:20px;
+    border-right:1px solid var(--lab-white-line);
+    border-bottom:1px solid var(--lab-white-line);
+    color:#fff;
+    font-size:.72rem;
+    font-weight:900;
+    letter-spacing:.09em;
+}
+
+.learn-transition{
+    margin-top:50px;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+    color:var(--lab-gold-light);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.15rem,2vw,1.8rem);
+    font-weight:700;
+}
+
+.learn-transition b{
+    color:#fff;
+}
+
+.learn-cta{
+    width:max-content;
+    max-width:100%;
+    margin-top:42px;
+    padding:18px 22px;
+    display:inline-flex;
+    align-items:center;
+    gap:28px;
+    border:1px solid var(--lab-gold-light);
+    color:var(--lab-navy);
+    background:var(--lab-gold-light);
+    text-decoration:none;
+    font-size:.73rem;
+    font-weight:900;
+    letter-spacing:.1em;
+    transition:transform .2s ease,background .2s ease,color .2s ease;
+}
+
+.learn-cta:hover{
+    transform:translateY(-2px);
+    background:#fff;
+    color:var(--lab-navy);
+}
+
+/* ==========================================================================
+   15 / DOCUMENT ONE CLOSING
+   ========================================================================== */
+
+.title-closing{
+    padding:clamp(80px,10vw,140px) var(--lab-pad);
+    background:var(--lab-paper-bright);
+    border-top:1px solid var(--lab-line);
+}
+
+.title-closing > span{
+    color:var(--lab-red);
+    font-size:.67rem;
+    font-weight:900;
+    letter-spacing:.17em;
+}
+
+.title-closing h2{
+    margin:25px 0 45px;
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(3rem,7vw,7rem);
+    line-height:.9;
+    letter-spacing:-.045em;
+}
+
+.title-closing > div{
+    max-width:780px;
+    padding:25px 0;
+    border-top:5px solid var(--lab-navy);
+    border-bottom:1px solid var(--lab-line);
+}
+
+.title-closing strong{
+    color:var(--lab-red);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.3rem,2.2vw,2rem);
+}
+
+.title-closing p{
+    margin:10px 0 0;
+    color:var(--lab-muted);
+    font-weight:700;
+    letter-spacing:.06em;
+}
+
+.title-closing > a{
+    display:inline-block;
+    margin-top:36px;
+    color:var(--lab-blue);
+    font-size:.72rem;
+    font-weight:900;
+    letter-spacing:.11em;
+    text-decoration:none;
+}
+
+.title-closing > a:hover{
+    text-decoration:underline;
+}
+
+/* ==========================================================================
+   16 / HUGE DOCUMENT DIVIDER
+   ========================================================================== */
+
+.lab-document-divider{
+    position:relative;
+    width:100%;
+    padding:clamp(52px,7vw,92px) 0;
+    background:#fff;
+    color:var(--lab-navy);
+}
+
+.lab-document-divider-line{
+    width:100%;
+    height:clamp(9px,1vw,15px);
+    background:var(--lab-navy);
+}
+
+.lab-document-divider-marker{
+    width:min(calc(100% - (var(--lab-pad) * 2)),var(--lab-max));
+    margin:0 auto;
+    padding:30px 0;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    gap:30px;
+    color:var(--lab-navy);
+    font-size:.69rem;
+    font-weight:900;
+    letter-spacing:.17em;
+    text-transform:uppercase;
+}
+
+.lab-document-divider-marker span:last-child{
+    text-align:right;
+}
+
+.lab-document-divider-marker strong{
+    color:var(--lab-red);
+    font-family:var(--lab-serif);
+    font-size:2.3rem;
+}
+
+/* ==========================================================================
+   DOCUMENT TWO — LAB NOTE / 001
+   ========================================================================== */
+
+/* ==========================================================================
+   17 / PRODUCT DEFINITION BASE
+   ========================================================================== */
+
+.product-definition{
+    position:relative;
+    width:100%;
+    background:var(--lab-paper-bright);
+    color:var(--lab-ink);
+}
+
+.product-definition-rule{
+    width:100%;
+    height:3px;
+    background:var(--lab-gold);
+}
+
+.product-definition-header{
+    width:min(calc(100% - (var(--lab-pad) * 2)),var(--lab-max));
+    margin:0 auto;
+    padding:24px 0;
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    border-bottom:1px solid var(--lab-line);
+    color:var(--lab-muted);
+    font-size:.66rem;
+    font-weight:900;
+    letter-spacing:.17em;
+    text-transform:uppercase;
+}
+
+.product-definition-index{
+    color:var(--lab-red);
+}
+
+.product-definition-label{
+    color:var(--lab-blue);
+}
+
+/* ==========================================================================
+   18 / INTRODUCTION
+   ========================================================================== */
+
+.product-definition-intro{
+    width:min(calc(100% - (var(--lab-pad) * 2)),var(--lab-max));
+    margin:0 auto;
+    padding:clamp(90px,11vw,160px) 0 clamp(75px,9vw,125px);
+}
+
+.product-definition-intro h2,
+.product-definition-future h2,
+.product-definition-final h2{
+    max-width:1100px;
+    margin:0;
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(3.4rem,7.5vw,8rem);
+    line-height:.9;
+    letter-spacing:-.05em;
+    text-transform:uppercase;
+}
+
+.product-definition-intro h2 span,
+.product-definition-future h2 span,
+.product-definition-final h2 span{
+    display:block;
+    color:var(--lab-red);
+}
+
+.product-definition-lead{
+    max-width:900px;
+    margin:45px 0 0;
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.25rem,2.2vw,2rem);
+    line-height:1.55;
+}
+
+.product-definition-intro > p:not(.product-definition-kicker):not(.product-definition-lead){
+    max-width:760px;
+    margin:22px 0 0;
+    color:var(--lab-muted);
+    font-size:1.05rem;
+    line-height:1.8;
+}
+
+/* ==========================================================================
+   19 / MEDIA FILE STATEMENT
+   ========================================================================== */
+
+.product-definition-statement{
+    padding:0 var(--lab-pad);
+    background:var(--lab-paper-dark);
+    border-top:1px solid var(--lab-line);
+    border-bottom:1px solid var(--lab-line);
+}
+
+.product-definition-statement p{
+    width:min(100%,var(--lab-max));
+    margin:0 auto;
+    padding:23px 0;
+    border-bottom:1px solid var(--lab-line);
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.2rem,2.1vw,1.9rem);
+    font-weight:700;
+}
+
+.product-definition-statement p:last-child{
+    border-bottom:0;
+    color:var(--lab-red);
+}
+
+/* ==========================================================================
+   20 / PRODUCT TODAY + ENGINEERING
+   ========================================================================== */
+
+.product-definition-copy{
+    width:min(calc(100% - (var(--lab-pad) * 2)),var(--lab-max));
+    margin:0 auto;
+    padding:clamp(85px,10vw,145px) 0;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    border-bottom:1px solid var(--lab-line);
+}
+
+.product-definition-copy > div{
+    padding:0 clamp(30px,5vw,75px);
+}
+
+.product-definition-copy > div:first-child{
+    padding-left:0;
+    border-right:1px solid var(--lab-line);
+}
+
+.product-definition-copy > div:last-child{
+    padding-right:0;
+}
+
+.product-definition-copy > div > span,
+.product-definition-best-copy > span,
+.product-definition-v1 > span,
+.product-definition-evolution > span,
+.product-definition-permission > span,
+.product-definition-final > span{
+    color:var(--lab-red);
+    font-size:.66rem;
+    font-weight:900;
+    letter-spacing:.17em;
+    text-transform:uppercase;
+}
+
+.product-definition-copy h3,
+.product-definition-best h3,
+.product-definition-v1 h3,
+.product-definition-research h3,
+.product-definition-permission h3{
+    margin:20px 0 28px;
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(2rem,3.8vw,4.2rem);
+    line-height:1.03;
+    letter-spacing:-.035em;
+}
+
+.product-definition-copy p,
+.product-definition-best p,
+.product-definition-v1 p,
+.product-definition-research p,
+.product-definition-permission p,
+.product-definition-final p{
+    color:var(--lab-muted);
+    line-height:1.82;
+}
+
+/* ==========================================================================
+   21 / PRODUCT PRINCIPLE
+   ========================================================================== */
+
+.product-definition-principle{
+    padding:clamp(75px,9vw,130px) var(--lab-pad);
+    background:var(--lab-navy);
+    color:#fff;
+}
+
+.product-definition-principle > span{
+    display:block;
+    width:min(100%,var(--lab-max));
+    margin:0 auto 28px;
+    color:var(--lab-gold-light);
+    font-size:.66rem;
+    font-weight:900;
+    letter-spacing:.17em;
+}
+
+.product-definition-principle blockquote{
+    width:min(100%,var(--lab-max));
+    margin:0 auto;
+    color:#fff;
+    font-family:var(--lab-serif);
+    font-size:clamp(2.1rem,5vw,5.6rem);
+    line-height:1.03;
+    font-weight:700;
+}
+
+/* ==========================================================================
+   22 / BEST AVAILABLE
+   ========================================================================== */
+
+.product-definition-best{
+    width:min(calc(100% - (var(--lab-pad) * 2)),var(--lab-max));
+    margin:0 auto;
+    padding:clamp(90px,11vw,155px) 0;
+    display:grid;
+    grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+    gap:clamp(50px,8vw,130px);
+}
+
+.product-definition-ranking{
+    border-top:6px solid var(--lab-navy);
+}
+
+.product-definition-ranking > div{
+    min-height:84px;
+    padding:20px 8px;
+    display:grid;
+    grid-template-columns:55px 1fr;
+    align-items:center;
+    border-bottom:1px solid var(--lab-line);
+}
+
+.product-definition-ranking small{
+    color:var(--lab-gold);
+    font-family:var(--lab-serif);
+    font-weight:700;
+}
+
+.product-definition-ranking strong{
+    color:var(--lab-navy);
+    font-size:.75rem;
+    letter-spacing:.1em;
+    line-height:1.55;
+}
+
+/* ==========================================================================
+   23 / WHAT v1 PROVED
+   ========================================================================== */
+
+.product-definition-v1{
+    padding:clamp(85px,10vw,145px) var(--lab-pad);
+    background:var(--lab-paper-dark);
+    border-top:1px solid var(--lab-line);
+}
+
+.product-definition-v1 > *{
+    width:min(100%,var(--lab-max));
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.product-definition-v1 h3{
+    margin-top:20px;
+}
+
+.product-definition-v1 p{
+    max-width:900px;
+    margin-top:20px;
+}
+
+.product-definition-v1 > strong{
+    display:block;
+    margin-top:38px;
+    padding-top:25px;
+    border-top:4px solid var(--lab-red);
+    color:var(--lab-red);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.35rem,2.4vw,2.3rem);
+}
+
+/* ==========================================================================
+   24 / v1 PROOF GRID
+   ========================================================================== */
+
+.product-definition-proof{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    background:var(--lab-paper-bright);
+    border-top:1px solid var(--lab-line);
+    border-left:1px solid var(--lab-line);
+}
+
+.product-definition-proof > div{
+    min-height:180px;
+    padding:clamp(28px,4vw,50px);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    border-right:1px solid var(--lab-line);
+    border-bottom:1px solid var(--lab-line);
+}
+
+.product-definition-proof span{
+    color:var(--lab-red);
+    font-family:var(--lab-mono);
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.12em;
+}
+
+.product-definition-proof strong{
+    color:var(--lab-navy);
+    font-family:var(--lab-serif);
+    font-size:clamp(1.1rem,1.8vw,1.65rem);
+    line-height:1.25;
+}
+
+/* ==========================================================================
+   25 / THE FILE CAN BECOME KNOWLEDGE
+   ========================================================================== */
+
+.product-definition-future{
+    padding:clamp(100px,12vw,175px) var(--lab-pad);
+    background:var(--lab-paper-blue);
+    border-top:8px solid var(--lab-gold);
+}
+
+.product-definition-future > *{
+    width:min(100%,var(--lab-max));
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.product-definition-future > p:not(.product-definition-lead){
+    max-width:820px;
+    margin-top:25px;
+    color:var(--lab-muted);
+    line-height:1.8;
+}
+
+.future-flow{
+    max-width:900px;
+    margin-top:70px;
+    display:flex;
+    flex-direction:column;
+}
+
+.future-flow > div{
+    min-height:80px;
+    padding:19px 24px;
+    display:grid;
+    grid-template-columns:55px 1fr;
+    align-items:center;
+    border:1px solid rgba(16,28,45,.22);
+    background:rgba(255,255,255,.68);
+}
+
+.future-flow > span{
+    height:30px;
+    padding-left:26px;
+    display:flex;
+    align-items:center;
+    color:var(--lab-red);
+    font-weight:900;
+}
+
+.future-flow small{
+    color:var(--lab-gold);
+    font-family:var(--lab-serif);
+    font-weight:700;
+}
+
+.future-flow strong{
+    color:var(--lab-navy);
+    font-size:.76rem;
+    letter-spacing:.11em;
+}
+
+.future-flow .future-flow-final{
+    background:var(--lab-navy);
+    border-color:var(--lab-navy);
+}
+
+.future-flow .future-flow-final strong{
+    color:#fff;
+}
+
+/* ==========================================================================
+   26 / RESEARCH DIRECTION
+   ========================================================================== */
+
+.product-definition-research{
+    width:min(calc(100% - (var(--lab-pad) * 2)),var(--lab-max));
+    margin:0 auto;
+    padding:clamp(90px,11vw,155px) 0;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    border-bottom:1px solid var(--lab-line);
+}
+
+.product-definition-research > div{
+    padding:0 clamp(30px,5vw,75px);
+}
+
+.product-definition-research > div:first-child{
+    padding-left:0;
+    border-right:1px solid var(--lab-line);
+}
+
+.product-definition-research > div:last-child{
+    padding-right:0;
+}
+
+.product-definition-research > div > span{
+    color:var(--lab-blue);
+    font-size:.66rem;
+    font-weight:900;
+    letter-spacing:.17em;
+}
+
+/* ==========================================================================
+   27 / PRODUCT EVOLUTION
+   ========================================================================== */
+
+.product-definition-evolution{
+    padding:clamp(75px,9vw,125px) var(--lab-pad);
+    background:var(--lab-paper);
+}
+
+.product-definition-evolution > span,
+.evolution-flow{
+    width:min(100%,var(--lab-max));
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.evolution-flow{
+    margin-top:30px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:11px;
+}
+
+.evolution-flow strong{
+    padding:13px 15px;
+    border:1px solid var(--lab-line);
+    background:var(--lab-paper-bright);
+    color:var(--lab-navy);
+    font-size:.7rem;
+    letter-spacing:.08em;
+}
+
+.evolution-flow b{
+    color:var(--lab-red);
+}
+
+/* ==========================================================================
+   28 / CREATOR PERMISSION
+   ========================================================================== */
+
+.product-definition-permission{
+    padding:clamp(90px,11vw,155px) var(--lab-pad);
+    background:var(--lab-paper-bright);
+    border-top:1px solid var(--lab-line);
+    border-bottom:1px solid var(--lab-line);
+}
+
+.product-definition-permission > *{
+    width:min(100%,1100px);
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.product-definition-permission h3{
+    font-size:clamp(2.4rem,5vw,5.4rem);
+}
+
+.product-definition-permission h3 em{
+    color:var(--lab-red);
+    font-style:normal;
+}
+
+.product-definition-permission p{
+    max-width:820px;
+    margin-top:22px;
+}
+
+/* ==========================================================================
+   29 / FINAL PRODUCT DEFINITION
+   ========================================================================== */
+
+.product-definition-final{
+    padding:clamp(100px,12vw,180px) var(--lab-pad);
+    background:var(--lab-navy);
+    color:#fff;
+    border-bottom:8px solid var(--lab-gold);
+}
+
+.product-definition-final > *{
+    width:min(100%,var(--lab-max));
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.product-definition-final > span{
+    color:var(--lab-gold-light);
+}
+
+.product-definition-final h2{
+    margin-top:28px;
+    color:#fff;
+}
+
+.product-definition-final h2 span{
+    color:var(--lab-gold-light);
+}
+
+.product-definition-final p{
+    max-width:850px;
+    margin-top:28px;
+    color:rgba(255,255,255,.72);
+}
+
+.product-definition-final > strong{
+    display:block;
+    margin-top:50px;
+    padding:32px 0;
+    border-top:1px solid var(--lab-white-line);
+    border-bottom:1px solid var(--lab-white-line);
+    color:#fff;
+    font-family:var(--lab-serif);
+    font-size:clamp(1.35rem,2.6vw,2.6rem);
+    line-height:1.55;
+}
+
+.product-definition-final .product-definition-last{
+    margin-top:45px;
+    color:var(--lab-gold-light);
+    font-size:.82rem;
+    font-weight:900;
+    letter-spacing:.12em;
+}
+
+/* ==========================================================================
+   30 / FOOTER
+   ========================================================================== */
+
+.page-footer{
+    background:var(--lab-paper-bright);
+    color:var(--lab-ink);
+    border-top:1px solid var(--lab-line);
+}
+
+.page-footer a{
+    color:var(--lab-blue);
+}
+
+/* ==========================================================================
+   31 / TABLET
+   ========================================================================== */
+
+@media (max-width:1000px){
+
+    .title-section{
+        grid-template-columns:70px minmax(0,1fr);
+    }
+
+    .title-copy-grid,
+    .problem-layout,
+    .product-window-body,
+    .product-definition-copy,
+    .product-definition-best,
+    .product-definition-research{
+        grid-template-columns:1fr;
+    }
+
+    .product-window-copy{
+        border-bottom:1px solid var(--lab-line);
+    }
+
+    .how-grid,
+    .discipline-list,
+    .product-definition-proof{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .product-definition-copy > div,
+    .product-definition-research > div{
+        padding:45px 0;
+    }
+
+    .product-definition-copy > div:first-child,
+    .product-definition-research > div:first-child{
+        border-right:0;
+        border-bottom:1px solid var(--lab-line);
+    }
+
+    .product-definition-best{
+        gap:55px;
+    }
+}
+
+/* ==========================================================================
+   32 / MOBILE
+   ========================================================================== */
+
+@media (max-width:768px){
+
+    :root{
+        --lab-pad:24px;
+    }
+
+    .title-hero{
+        min-height:auto;
+        padding-top:140px;
+    }
+
+    .title-hero::before{
+        left:24px;
+        right:24px;
+        height:5px;
+    }
+
+    .title-hero h1{
+        font-size:clamp(3rem,15vw,5.5rem);
+    }
+
+    .title-hero-index{
+        right:24px;
+    }
+
+    .title-section{
+        display:block;
+        padding-top:78px;
+        padding-bottom:78px;
+    }
+
+    .title-section-number{
+        margin-bottom:28px;
+        font-size:2.2rem;
+    }
+
+    .title-section h2,
+    .learn-funnel h2{
+        font-size:clamp(2.5rem,12vw,4.6rem);
+    }
+
+    .title-copy-grid{
+        gap:30px;
+    }
+
+    .question-grid,
+    .idea-explanation,
+    .how-grid,
+    .discipline-list,
+    .shipping-questions,
+    .learn-points,
+    .product-definition-proof{
+        grid-template-columns:1fr;
+    }
+
+    .product-window-bar{
+        grid-template-columns:auto 1fr;
+    }
+
+    .product-window-bar > span:last-child{
+        display:none;
+    }
+
+    .problem-layout{
+        gap:45px;
+    }
+
+    .lab-quote{
+        font-size:clamp(1.7rem,8vw,3rem);
+    }
+
+    .iteration-flow{
+        align-items:flex-start;
+    }
+
+    .learn-funnel{
+        padding-top:90px;
+        padding-bottom:90px;
+    }
+
+    .lab-document-divider{
+        padding:40px 0;
+    }
+
+    .lab-document-divider-marker{
+        grid-template-columns:1fr;
+        gap:12px;
+        text-align:center;
+    }
+
+    .lab-document-divider-marker span:last-child{
+        text-align:center;
+    }
+
+    .lab-document-divider-marker strong{
+        transform:none;
+    }
+
+    .product-definition-header{
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .product-definition-intro,
+    .product-definition-copy,
+    .product-definition-best,
+    .product-definition-research{
+        width:calc(100% - 48px);
+    }
+
+    .product-definition-intro h2,
+    .product-definition-future h2,
+    .product-definition-final h2{
+        font-size:clamp(3rem,14vw,5.4rem);
+    }
+
+    .product-definition-principle blockquote{
+        font-size:clamp(2rem,9vw,3.8rem);
+    }
+
+    .product-definition-copy h3,
+    .product-definition-best h3,
+    .product-definition-v1 h3,
+    .product-definition-research h3,
+    .product-definition-permission h3{
+        font-size:clamp(2rem,9vw,3.6rem);
+    }
+
+    .future-flow > div,
+    .product-definition-ranking > div{
+        grid-template-columns:42px 1fr;
+    }
+
+    .evolution-flow{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .evolution-flow b{
+        padding-left:14px;
+        transform:rotate(90deg);
+        width:max-content;
+    }
+}
+
+/* ==========================================================================
+   33 / SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width:520px){
+
+    .title-status-row{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .title-hero-lines{
+        flex-direction:column;
+    }
+
+    .title-hero-lines span{
+        width:100%;
+    }
+
+    .product-window-copy,
+    .product-terminal,
+    .clarity-block,
+    .title-callout,
+    .version-lesson{
+        padding:26px;
+    }
+
+    .question-grid > div{
+        min-height:90px;
+        padding:22px;
+    }
+
+    .how-grid article,
+    .discipline-list article{
+        min-height:auto;
+    }
+
+    .learn-cta{
+        width:100%;
+        justify-content:space-between;
+    }
+
+    .product-definition-proof > div{
+        min-height:145px;
+    }
+}
+
+/* ==========================================================================
+   34 / REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+}
+/*
+==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.page-footer{
+    width:100%;
+    padding:32px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+
+    background:#050505;
+    color:#fff;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+
+.page-footer > div:first-child{
+    display:flex;
+    align-items:center;
+}
+
+.page-footer-links{
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+.page-footer a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.page-footer a:hover{
+    color:var(--lab-gold-light);
+}
+
+/* ==========================================================
+   PROJECT 005 / THUG NAVI
+========================================================== */
+
+.project-card-navi{
+    position:relative;
+    overflow:hidden;
+    min-height:590px;
+    display:flex;
+    flex-direction:column;
+    background:#050505;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.12);
+    text-decoration:none;
+}
+
+.project-card-navi:hover{
+    border-color:#35bdff;
+}
+
+.navi-visual{
+    min-height:245px;
+    padding:38px 42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(rgba(53,189,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(53,189,255,.035) 1px, transparent 1px),
+        #050505;
+
+    background-size:38px 38px;
+
+    border-top:1px solid rgba(255,255,255,.06);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.navi-window{
+    width:min(100%,430px);
+    border:1px solid rgba(255,255,255,.22);
+    background:#090b0d;
+    box-shadow:0 22px 60px rgba(0,0,0,.45);
+}
+
+.navi-window-top{
+    height:32px;
+    padding:0 12px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.navi-window-top span{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:rgba(255,255,255,.3);
+}
+
+.navi-window-top span:first-child{
+    background:#35bdff;
+}
+
+.navi-window-body{
+    min-height:145px;
+    display:grid;
+    grid-template-columns:82px 1fr;
+}
+
+.navi-sidebar{
+    padding:18px 12px;
+    display:flex;
+    flex-direction:column;
+    gap:13px;
+
+    border-right:1px solid rgba(255,255,255,.08);
+}
+
+.navi-sidebar span{
+    width:100%;
+    height:5px;
+    background:rgba(255,255,255,.16);
+}
+
+.navi-sidebar span:first-child{
+    background:#35bdff;
+}
+
+.navi-content{
+    padding:18px;
+}
+
+.navi-search{
+    width:100%;
+    height:18px;
+    margin-bottom:18px;
+
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.025);
+}
+
+.navi-links{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
+}
+
+.navi-links span{
+    height:38px;
+
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.025);
+}
+
+.project-card-navi .project-type{
+    color:#35bdff;
+}
+
+.project-card-navi .project-link{
+    color:#35bdff;
+}
+
+.project-card-navi:hover .navi-window{
+    border-color:rgba(53,189,255,.65);
+}
+
+/* ==========================================================
+   THUG NAVI™
+   LAB / TITLE 002
+   pages/lab/title/thugnavi.html
+========================================================== */
+
+
+/* ==========================================================
+   THUG NAVI / PAGE
+========================================================== */
+
+.navi-title-page{
+    background:#050505;
+    color:#ffffff;
+}
+
+.navi-title-page main{
+    background:#f4f1e8;
+    color:#101c2d;
+}
+
+.navi-shell{
+    width:min(1440px, 88%);
+    margin:0 auto;
+}
+
+
+/* ==========================================================
+   THUG NAVI / HERO
+========================================================== */
+
+.navi-hero{
+    min-height:100vh;
+    padding:160px 0 110px;
+
+    background:
+        linear-gradient(
+            rgba(16,28,45,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(16,28,45,.035) 1px,
+            transparent 1px
+        ),
+        #f7f3e9;
+
+    background-size:44px 44px;
+
+    border-bottom:12px solid #101c2d;
+}
+
+.navi-eyebrow{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px 30px;
+
+    margin-bottom:70px;
+
+    color:#59616b;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.68rem;
+    font-weight:900;
+
+    line-height:1.2;
+    letter-spacing:.20em;
+}
+
+.navi-eyebrow span:first-child{
+    color:#173f73;
+}
+
+.navi-eyebrow span:nth-child(2){
+    color:#8d2330;
+}
+
+
+/* ==========================================================
+   THUG NAVI / HERO GRID
+========================================================== */
+
+.navi-hero-grid{
+    display:grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(420px, .95fr);
+
+    gap:7vw;
+
+    align-items:center;
+}
+
+.navi-kicker{
+    margin:0 0 20px;
+
+    color:#8d2330;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.72rem;
+    font-weight:900;
+
+    line-height:1.2;
+    letter-spacing:.22em;
+}
+
+.navi-hero h1{
+    margin:0;
+
+    color:#101c2d;
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:clamp(5rem, 10vw, 10rem);
+    font-weight:900;
+
+    line-height:.72;
+    letter-spacing:-.07em;
+}
+
+.navi-hero h1 span{
+    display:block;
+    color:#173f73;
+}
+
+.navi-deck{
+    max-width:760px;
+
+    margin:45px 0 26px;
+
+    color:#101c2d;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:clamp(1.15rem, 2vw, 1.75rem);
+    font-weight:800;
+
+    line-height:1.35;
+    letter-spacing:.03em;
+}
+
+.navi-deck strong{
+    display:block;
+
+    margin-top:7px;
+
+    color:#8d2330;
+}
+
+.navi-intro{
+    max-width:720px;
+
+    margin:0 0 16px;
+
+    color:#4f5357;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1.05rem;
+    font-weight:400;
+
+    line-height:1.85;
+}
+
+.navi-hero-statement{
+    max-width:760px;
+
+    margin:32px 0 0;
+    padding:22px 0 0;
+
+    border-top:2px solid #101c2d;
+
+    color:#101c2d;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.78rem;
+    font-weight:900;
+
+    line-height:1.7;
+    letter-spacing:.12em;
+}
+
+
+/* ==========================================================
+   THUG NAVI / COMMAND WINDOW
+========================================================== */
+
+.navi-command-window{
+    overflow:hidden;
+
+    border:1px solid #243346;
+
+    background:#080b0f;
+
+    box-shadow:24px 30px 0 #c59a35;
+}
+
+.navi-command-bar{
+    min-height:48px;
+
+    padding:0 16px;
+
+    display:flex;
+    align-items:center;
+
+    gap:8px;
+
+    border-bottom:1px solid #263140;
+}
+
+.navi-command-bar span{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#48596c;
+}
+
+.navi-command-bar span:first-child{
+    background:#35bdff;
+}
+
+.navi-command-bar strong{
+    margin-left:auto;
+
+    color:#9fb0c3;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.56rem;
+    font-weight:800;
+
+    line-height:1;
+    letter-spacing:.14em;
+}
+
+.navi-command-body{
+    min-height:380px;
+
+    display:grid;
+
+    grid-template-columns:130px 1fr;
+}
+
+.navi-command-body aside{
+    padding:28px 18px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+
+    border-right:1px solid #202a36;
+
+    color:#6f8296;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.55rem;
+    font-weight:800;
+
+    line-height:1.2;
+    letter-spacing:.10em;
+}
+
+.navi-command-body aside b{
+    color:#35bdff;
+}
+
+.navi-command-main{
+    padding:30px;
+}
+
+.navi-command-search{
+    padding:13px 15px;
+
+    border:1px solid #263548;
+
+    color:#63758a;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.56rem;
+    font-weight:700;
+
+    line-height:1;
+    letter-spacing:.08em;
+}
+
+.navi-command-cards{
+    margin-top:25px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2, 1fr);
+
+    gap:12px;
+}
+
+.navi-command-cards span{
+    min-height:86px;
+
+    padding:15px;
+
+    display:flex;
+    align-items:flex-end;
+
+    border:1px solid #202d3b;
+
+    background:#0d1218;
+
+    color:#a9b6c4;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.58rem;
+    font-weight:800;
+
+    line-height:1.2;
+    letter-spacing:.08em;
+}
+
+.navi-command-cards span:nth-child(3){
+    border-color:#35bdff;
+    color:#ffffff;
+}
+
+
+/* ==========================================================
+   THUG NAVI / STANDARD SECTIONS
+========================================================== */
+
+.navi-section{
+    padding:120px 0;
+
+    background:#fffdf8;
+
+    border-bottom:1px solid rgba(16,28,45,.15);
+}
+
+.navi-section-paper{
+    background:#eee9dc;
+}
+
+.navi-two-col{
+    display:grid;
+
+    grid-template-columns:180px minmax(0, 1fr);
+
+    gap:7vw;
+}
+
+
+/* ==========================================================
+   THUG NAVI / SECTION INDEX
+========================================================== */
+
+.navi-section-index{
+    padding-top:5px;
+
+    border-top:5px solid #101c2d;
+}
+
+.navi-section-index span{
+    display:block;
+
+    margin-top:14px;
+
+    color:#8d2330;
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:3.8rem;
+    font-weight:900;
+
+    line-height:1;
+}
+
+.navi-section-index p{
+    margin-top:10px;
+
+    color:#101c2d;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.60rem;
+    font-weight:900;
+
+    line-height:1.5;
+    letter-spacing:.16em;
+}
+
+
+/* ==========================================================
+   THUG NAVI / SECTION COPY
+========================================================== */
+
+.navi-section-copy h2{
+    max-width:1050px;
+
+    margin:0 0 30px;
+
+    color:#101c2d;
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:clamp(2.7rem, 5.6vw, 6.2rem);
+    font-weight:700;
+
+    line-height:.94;
+    letter-spacing:-.045em;
+}
+
+.navi-section-copy > p:not(.navi-kicker):not(.navi-lead):not(.navi-note){
+    max-width:900px;
+
+    color:#555752;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1rem;
+    font-weight:400;
+
+    line-height:1.9;
+}
+
+.navi-lead{
+    max-width:900px;
+
+    color:#173f73;
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:clamp(1.25rem, 2.2vw, 1.8rem);
+    font-weight:700;
+
+    line-height:1.5;
+}
+
+.navi-section-copy blockquote{
+    margin:55px 0 0;
+
+    padding:30px 0 30px 32px;
+
+    border-left:8px solid #c59a35;
+
+    color:#101c2d;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:clamp(1.15rem, 2vw, 1.65rem);
+    font-weight:900;
+
+    line-height:1.45;
+    letter-spacing:.04em;
+}
+
+
+/* ==========================================================
+   THUG NAVI / SECTION HEAD
+========================================================== */
+
+.navi-section-head{
+    display:grid;
+
+    grid-template-columns:220px 1fr;
+
+    gap:50px;
+
+    align-items:start;
+
+    margin-bottom:65px;
+    padding-top:18px;
+
+    border-top:5px solid #101c2d;
+}
+
+.navi-section-head > span{
+    color:#8d2330;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.65rem;
+    font-weight:900;
+
+    line-height:1.4;
+    letter-spacing:.18em;
+}
+
+.navi-section-head > p{
+    max-width:950px;
+
+    margin:0;
+
+    color:#101c2d;
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:clamp(2rem, 4.5vw, 4.8rem);
+    font-weight:700;
+
+    line-height:.98;
+    letter-spacing:-.035em;
+}
+
+
+/* ==========================================================
+   THUG NAVI / ORIGIN FLOW
+========================================================== */
+
+.navi-origin-flow{
+    margin:50px 0 0;
+
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+.navi-origin-flow span{
+    padding:15px 17px;
+
+    border:1px solid rgba(16,28,45,.25);
+
+    background:#ffffff;
+
+    color:#101c2d;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.60rem;
+    font-weight:900;
+
+    line-height:1;
+    letter-spacing:.10em;
+}
+
+.navi-origin-flow i{
+    color:#8d2330;
+    font-style:normal;
+}
+
+
+/* ==========================================================
+   THUG NAVI / DARK SECTIONS
+========================================================== */
+
+.navi-section-dark{
+    background:#07090b;
+    color:#ffffff;
+}
+
+.navi-section-dark .navi-section-head{
+    border-color:#35bdff;
+}
+
+.navi-section-dark .navi-section-head > span{
+    color:#35bdff;
+}
+
+.navi-section-dark .navi-section-head > p{
+    color:#ffffff;
+}
+
+
+/* ==========================================================
+   THUG NAVI / PROBLEM GRID
+========================================================== */
+
+.navi-problem-grid{
+    display:grid;
+
+    grid-template-columns:repeat(4, 1fr);
+
+    border-top:1px solid #27303a;
+    border-left:1px solid #27303a;
+}
+
+.navi-problem-grid article{
+    min-height:280px;
+
+    padding:30px;
+
+    border-right:1px solid #27303a;
+    border-bottom:1px solid #27303a;
+}
+
+.navi-problem-grid b{
+    color:#35bdff;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.70rem;
+    font-weight:900;
+
+    line-height:1;
+    letter-spacing:.10em;
+}
+
+.navi-problem-grid h3{
+    margin:70px 0 15px;
+
+    color:#ffffff;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1.15rem;
+    font-weight:900;
+
+    line-height:1.1;
+}
+
+.navi-problem-grid p{
+    color:#8e9aa6;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.92rem;
+    font-weight:400;
+
+    line-height:1.7;
+}
+
+.navi-dark-statement{
+    margin:70px 0 0;
+
+    color:#8e9aa6;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.78rem;
+    font-weight:900;
+
+    line-height:1.8;
+    letter-spacing:.10em;
+}
+
+.navi-dark-statement strong{
+    display:block;
+
+    margin-top:10px;
+
+    color:#ffffff;
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:clamp(1.7rem, 3vw, 3.2rem);
+    font-weight:900;
+
+    line-height:1.1;
+    letter-spacing:-.02em;
+}
+
+
+/* ==========================================================
+   THUG NAVI / FEATURE GRID
+========================================================== */
+
+.navi-feature-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3, 1fr);
+
+    border-top:1px solid rgba(16,28,45,.20);
+    border-left:1px solid rgba(16,28,45,.20);
+}
+
+.navi-feature-grid article{
+    min-height:260px;
+
+    padding:30px;
+
+    border-right:1px solid rgba(16,28,45,.20);
+    border-bottom:1px solid rgba(16,28,45,.20);
+}
+
+.navi-feature-grid span{
+    color:#8d2330;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.62rem;
+    font-weight:900;
+
+    line-height:1;
+    letter-spacing:.14em;
+}
+
+.navi-feature-grid h3{
+    margin:65px 0 12px;
+
+    color:#101c2d;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1rem;
+    font-weight:900;
+
+    line-height:1.15;
+    letter-spacing:.03em;
+}
+
+.navi-feature-grid p{
+    color:#66645f;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.90rem;
+    font-weight:400;
+
+    line-height:1.7;
+}
+
+
+/* ==========================================================
+   THUG NAVI / TECHNOLOGY STACK
+========================================================== */
+
+.navi-stack{
+    margin-top:55px;
+
+    border-top:1px solid rgba(16,28,45,.20);
+}
+
+.navi-stack div{
+    padding:19px 0;
+
+    display:grid;
+
+    grid-template-columns:220px 1fr;
+
+    gap:30px;
+
+    border-bottom:1px solid rgba(16,28,45,.20);
+}
+
+.navi-stack small{
+    color:#8d2330;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.58rem;
+    font-weight:900;
+
+    line-height:1.3;
+    letter-spacing:.14em;
+}
+
+.navi-stack strong{
+    color:#101c2d;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.85rem;
+    font-weight:900;
+
+    line-height:1.3;
+    letter-spacing:.06em;
+}
+
+
+/* ==========================================================
+   THUG NAVI / LOCAL-FIRST
+========================================================== */
+
+.navi-local-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2, 1fr);
+
+    gap:1px;
+
+    background:rgba(16,28,45,.18);
+
+    border:1px solid rgba(16,28,45,.18);
+}
+
+.navi-local-grid div{
+    min-height:220px;
+
+    padding:35px;
+
+    background:#f7f3e9;
+}
+
+.navi-local-grid strong{
+    color:#173f73;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.72rem;
+    font-weight:900;
+
+    line-height:1.2;
+    letter-spacing:.13em;
+}
+
+.navi-local-grid p{
+    max-width:520px;
+
+    margin-top:50px;
+
+    color:#62635f;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1rem;
+    font-weight:400;
+
+    line-height:1.75;
+}
+
+.navi-principle{
+    margin:70px 0 0;
+
+    color:#101c2d;
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:clamp(1.7rem, 3vw, 3.4rem);
+    font-weight:900;
+
+    line-height:1.12;
+}
+
+.navi-principle span{
+    display:block;
+
+    color:#8d2330;
+}
+
+
+/* ==========================================================
+   THUG NAVI / SYSTEM BLUEPRINT
+========================================================== */
+
+.navi-section-blueprint{
+    background:
+        linear-gradient(
+            rgba(53,189,255,.06) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(53,189,255,.06) 1px,
+            transparent 1px
+        ),
+        #09111a;
+
+    background-size:42px 42px;
+
+    color:#ffffff;
+}
+
+.navi-section-blueprint .navi-section-head{
+    border-color:#35bdff;
+}
+
+.navi-section-blueprint .navi-section-head > span{
+    color:#35bdff;
+}
+
+.navi-section-blueprint .navi-section-head > p{
+    color:#ffffff;
+}
+
+.navi-system-map{
+    min-height:540px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3, 1fr);
+
+    gap:18px;
+
+    align-content:center;
+}
+
+.navi-system-map div{
+    min-height:120px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid #2b3c4d;
+
+    background:#0b151f;
+
+    color:#9aabbc;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.70rem;
+    font-weight:900;
+
+    line-height:1;
+    letter-spacing:.14em;
+}
+
+.navi-system-map .core{
+    border:2px solid #35bdff;
+
+    color:#ffffff;
+
+    box-shadow:
+        0 0 0 8px rgba(53,189,255,.05);
+}
+
+.navi-system-copy{
+    max-width:850px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+    color:#91a1b1;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1.05rem;
+    font-weight:400;
+
+    line-height:1.8;
+}
+
+
+/* ==========================================================
+   THUG NAVI / v1 CHECKLIST
+========================================================== */
+
+.navi-check-grid{
+    margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2, 1fr);
+
+    gap:1px;
+
+    background:rgba(16,28,45,.15);
+
+    border:1px solid rgba(16,28,45,.15);
+}
+
+.navi-check-grid span{
+    padding:18px 20px;
+
+    background:#fffdf8;
+
+    color:#173f73;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.62rem;
+    font-weight:900;
+
+    line-height:1.4;
+    letter-spacing:.08em;
+}
+
+.navi-note{
+    margin-top:35px;
+
+    padding:22px;
+
+    border:1px solid rgba(141,35,48,.25);
+
+    background:rgba(141,35,48,.05);
+
+    color:#8d2330;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.68rem;
+    font-weight:900;
+
+    line-height:1.7;
+    letter-spacing:.08em;
+}
+
+
+/* ==========================================================
+   THUG NAVI / BUSINESS
+========================================================== */
+
+.navi-business-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3, 1fr);
+
+    border-top:1px solid #27303a;
+    border-left:1px solid #27303a;
+}
+
+.navi-business-grid article{
+    min-height:330px;
+
+    padding:30px;
+
+    border-right:1px solid #27303a;
+    border-bottom:1px solid #27303a;
+}
+
+.navi-business-grid > article > span{
+    color:#c59a35;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.62rem;
+    font-weight:900;
+
+    line-height:1;
+    letter-spacing:.14em;
+}
+
+.navi-business-grid h3{
+    margin:70px 0 15px;
+
+    color:#ffffff;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1.15rem;
+    font-weight:900;
+
+    line-height:1.1;
+}
+
+.navi-business-grid p{
+    color:#8e9aa6;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.92rem;
+    font-weight:400;
+
+    line-height:1.7;
+}
+
+.navi-business-note{
+    margin:45px 0 0;
+
+    color:#7f8b96;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.64rem;
+    font-weight:800;
+
+    line-height:1.7;
+    letter-spacing:.10em;
+}
+
+
+/* ==========================================================
+   THUG NAVI / LESSONS
+========================================================== */
+
+.navi-lessons{
+    max-width:1050px;
+
+    margin-left:auto;
+}
+
+.navi-lessons p{
+    margin:0;
+
+    padding:30px 0;
+
+    display:grid;
+
+    grid-template-columns:70px 1fr;
+
+    gap:25px;
+
+    border-top:1px solid rgba(16,28,45,.18);
+
+    color:#343b43;
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:clamp(1.05rem, 1.8vw, 1.35rem);
+    font-weight:600;
+
+    line-height:1.55;
+}
+
+.navi-lessons p:last-child{
+    border-bottom:1px solid rgba(16,28,45,.18);
+}
+
+.navi-lessons b{
+    color:#8d2330;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.70rem;
+    font-weight:900;
+
+    line-height:1.8;
+}
+
+
+/* ==========================================================
+   THUG NAVI / LAB → LEARN
+========================================================== */
+
+.navi-learn{
+    padding:130px 0;
+
+    background:#101c2d;
+
+    color:#ffffff;
+
+    border-top:12px solid #c59a35;
+}
+
+.navi-learn-index{
+    color:#e4c46d;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.65rem;
+    font-weight:900;
+
+    line-height:1;
+    letter-spacing:.18em;
+}
+
+.navi-learn h2{
+    max-width:1100px;
+
+    margin:45px 0 20px;
+
+    color:#ffffff;
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:clamp(3rem, 6vw, 7rem);
+    font-weight:700;
+
+    line-height:.92;
+    letter-spacing:-.045em;
+}
+
+.navi-learn-big{
+    color:#35bdff;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:clamp(1.4rem, 2.5vw, 2.5rem);
+    font-weight:900;
+
+    line-height:1.2;
+}
+
+.navi-learn > .navi-shell > p:not(.navi-learn-big){
+    max-width:850px;
+
+    color:#aab5c1;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1rem;
+    font-weight:400;
+
+    line-height:1.85;
+}
+
+.navi-learn-flow{
+    margin:55px 0 45px;
+
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+
+    gap:10px;
+}
+
+.navi-learn-flow span{
+    padding:14px 16px;
+
+    border:1px solid #405064;
+
+    color:#ffffff;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.58rem;
+    font-weight:900;
+
+    line-height:1;
+    letter-spacing:.10em;
+}
+
+.navi-learn-flow i{
+    color:#e4c46d;
+
+    font-style:normal;
+}
+
+.navi-learn-cta{
+    display:inline-block;
+
+    padding:18px 24px;
+
+    border:1px solid #35bdff;
+
+    color:#35bdff;
+
+    text-decoration:none;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.68rem;
+    font-weight:900;
+
+    line-height:1;
+    letter-spacing:.13em;
+
+    transition:
+        background-color .2s ease,
+        color .2s ease;
+}
+
+.navi-learn-cta:hover{
+    background:#35bdff;
+
+    color:#07111b;
+}
+
+
+/* ==========================================================
+   THUG NAVI / CLOSING
+========================================================== */
+
+.navi-closing{
+    padding:115px 0;
+
+    background:#f7f3e9;
+
+    color:#101c2d;
+}
+
+.navi-closing span{
+    color:#8d2330;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.65rem;
+    font-weight:900;
+
+    line-height:1;
+    letter-spacing:.18em;
+}
+
+.navi-closing h2{
+    margin:30px 0 15px;
+
+    color:#101c2d;
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:clamp(4rem, 9vw, 9rem);
+    font-weight:900;
+
+    line-height:.8;
+    letter-spacing:-.06em;
+}
+
+.navi-closing p,
+.navi-closing strong{
+    display:block;
+
+    margin:0;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:clamp(1.15rem, 2vw, 1.8rem);
+    font-weight:900;
+
+    line-height:1.3;
+}
+
+.navi-closing strong{
+    color:#8d2330;
+}
+
+.navi-closing a{
+    display:inline-block;
+
+    margin-top:55px;
+
+    color:#173f73;
+
+    text-decoration:none;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.68rem;
+    font-weight:900;
+
+    line-height:1;
+    letter-spacing:.12em;
+}
+
+
+/* ==========================================================
+   THUG NAVI / RESPONSIVE
+========================================================== */
+
+@media (max-width:1100px){
+
+    .navi-hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .navi-command-window{
+        max-width:760px;
+    }
+
+    .navi-problem-grid{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+    .navi-feature-grid{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width:800px){
+
+    .navi-shell{
+        width:calc(100% - 40px);
+    }
+
+    .navi-hero{
+        padding-top:125px;
+    }
+
+    .navi-eyebrow{
+        margin-bottom:45px;
+    }
+
+    .navi-two-col{
+        grid-template-columns:1fr;
+    }
+
+    .navi-section-index{
+        max-width:150px;
+    }
+
+    .navi-section-head{
+        grid-template-columns:1fr;
+
+        gap:20px;
+    }
+
+    .navi-business-grid{
+        grid-template-columns:1fr;
+    }
+
+    .navi-local-grid{
+        grid-template-columns:1fr;
+    }
+
+    .navi-system-map{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+    .navi-check-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media (max-width:560px){
+
+    .navi-section{
+        padding:85px 0;
+    }
+
+    .navi-hero h1{
+        font-size:clamp(4rem, 22vw, 7rem);
+    }
+
+    .navi-command-body{
+        grid-template-columns:1fr;
+    }
+
+    .navi-command-body aside{
+        display:none;
+    }
+
+    .navi-command-main{
+        padding:18px;
+    }
+
+    .navi-command-cards{
+        grid-template-columns:1fr;
+    }
+
+    .navi-problem-grid,
+    .navi-feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .navi-stack div{
+        grid-template-columns:1fr;
+
+        gap:8px;
+    }
+
+    .navi-system-map{
+        grid-template-columns:1fr;
+    }
+
+    .navi-lessons p{
+        grid-template-columns:45px 1fr;
+    }
+
+}

@@ -359,58 +359,44 @@
     letter-spacing:2px;
 }
 
+.project-link {
+    text-decoration: none;
+}
 
-/* terminal visual */
+
+/* ==========================================================
+   THUG CODING® DOWNLOADING — APP SCREENSHOT
+========================================================== */
+
 .project-terminal{
-    width:min(680px,52vw);
+    width:min(620px,48vw);
     position:absolute;
-    top:110px;
-    right:5%;
+    top:105px;
+    right:4%;
+    border:0;
+    background:transparent;
+    box-shadow:none;
+    transform:none;
+    overflow:hidden;
+}
+
+.project-terminal .project-app-image{
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:contain;
     border:1px solid rgba(255,255,255,.12);
-    background:#050505;
-    box-shadow:0 35px 90px rgba(0,0,0,.45);
-    transform:rotate(-1.5deg);
+    box-shadow:0 35px 90px rgba(0,0,0,.55);
+    transition:
+        transform .45s ease,
+        border-color .3s ease,
+        box-shadow .45s ease;
 }
 
-.terminal-bar{
-    height:46px;
-    padding:0 16px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    border-bottom:1px solid rgba(255,255,255,.08);
-    color:#555;
-    font-size:.52rem;
-    letter-spacing:1.4px;
-}
-
-.terminal-bar span{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:#333;
-}
-
-.terminal-bar b{
-    margin-left:auto;
-    font-weight:700;
-}
-
-.terminal-body{
-    min-height:255px;
-    padding:28px;
-    font-family:Consolas,"Courier New",monospace;
-    color:#777;
-    font-size:.82rem;
-    line-height:2;
-}
-
-.terminal-body span{
-    color:var(--lab-yellow);
-}
-
-.terminal-body .terminal-success{
-    color:#d6d6d6;
+.project-card-featured:hover .project-app-image{
+    transform:scale(1.015);
+    border-color:rgba(255,192,0,.32);
+    box-shadow:0 40px 100px rgba(0,0,0,.68);
 }
 
 
@@ -801,8 +787,9 @@
 ========================================================== */
 
 @media(max-width:1100px){
+
     .project-terminal{
-        width:48vw;
+        width:50vw;
         right:3%;
     }
 
@@ -825,7 +812,9 @@
     }
 }
 
+
 @media(max-width:900px){
+
     .lab-manifesto-grid,
     .lab-feature{
         grid-template-columns:1fr;
@@ -852,7 +841,7 @@
 
     .project-terminal{
         width:86%;
-        top:120px;
+        top:110px;
         right:7%;
     }
 
@@ -863,7 +852,9 @@
     }
 }
 
+
 @media(max-width:768px){
+
     .lab-hero{
         min-height:auto;
         padding:165px 6% 75px;
@@ -927,12 +918,6 @@
         right:6%;
     }
 
-    .terminal-body{
-        min-height:220px;
-        padding:20px;
-        font-size:.7rem;
-    }
-
     .project-content h3,
     .project-grid > .project-card:not(.project-card-featured) .project-content h3{
         letter-spacing:-2.5px;
@@ -981,7 +966,9 @@
     }
 }
 
+
 @media(max-width:520px){
+
     .lab-hero h1{
         font-size:clamp(4rem,22vw,6.8rem);
     }
@@ -1003,10 +990,6 @@
 
     .project-terminal{
         top:95px;
-    }
-
-    .terminal-bar b{
-        display:none;
     }
 
     .radio-visual{
