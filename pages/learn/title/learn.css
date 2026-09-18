@@ -946,4 +946,10 @@
     .platform-core {
         padding: 30px;
     }
+
+    .learn-method {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 85px 6%;
+    }
 }
