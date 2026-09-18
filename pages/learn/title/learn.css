@@ -749,6 +749,71 @@
 }
 
 /* ==========================================================
+   BUILD SOMETHING
+========================================================== */
+
+.build-something {
+    padding: 120px 7%;
+
+    background: #f1eee5;
+    color: #111111;
+
+    border-bottom: 1px solid var(--learn-line);
+}
+
+.build-label {
+    display: block;
+    margin-bottom: 30px;
+
+    color: var(--learn-blue);
+
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.build-something h2 {
+    max-width: 1000px;
+    margin: 0 0 45px;
+
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    line-height: 0.84;
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+.build-bottom {
+    max-width: 760px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.build-bottom p {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.7;
+
+    color: #555555;
+}
+
+.build-bottom strong {
+    color: #111111;
+}
+
+.build-bottom a {
+    width: max-content;
+
+    color: #111111;
+
+    font-weight: 900;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* ==========================================================
    TABLET
 ========================================================== */
 
