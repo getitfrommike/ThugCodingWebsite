@@ -57,14 +57,14 @@ const stories = [
         tag:'FIELD NOTE 007',
         title:'MAGNOLIA SQUARE',
         sub:'Every intersection holds a story.',
-        link:'journal/magnolia-square.html'
+        link:'pages/magnolia-square.html'
     },
     {
         image:'images/devi.jpg',
         tag:'FIELD NOTE 008',
         title:'THE INTERNET OF FASHION',
         sub:'A route carved by systems.',
-        link:'journal/imperial-highway.html'
+        link:'pages/internetOfFashion.html'
     },
     {
         image:'images/manifesto001.jpg',
