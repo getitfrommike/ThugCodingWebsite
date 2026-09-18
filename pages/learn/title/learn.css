@@ -668,6 +668,85 @@
     border-color: var(--learn-blue);
 }
 
+/* ==========================================================
+   THE METHOD
+========================================================== */
+
+.learn-method {
+    padding: 120px 7%;
+
+    display: grid;
+    grid-template-columns: 0.35fr 1.65fr;
+    gap: 70px;
+
+    background: #111111;
+    color: #ffffff;
+
+    border-bottom: 1px solid var(--learn-line);
+}
+
+.method-index {
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+
+    color: var(--learn-blue);
+}
+
+.method-main {
+    max-width: 1050px;
+}
+
+.method-heading {
+    margin-bottom: 55px;
+}
+
+.method-heading > span {
+    display: block;
+    margin-bottom: 20px;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+
+    color: var(--learn-blue);
+}
+
+.method-heading h2 {
+    margin: 0;
+
+    font-size: clamp(3rem, 6.5vw, 6.5rem);
+    line-height: 0.88;
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+.method-copy {
+    max-width: 760px;
+}
+
+.method-copy p {
+    margin: 0 0 28px;
+
+    font-size: 1rem;
+    line-height: 1.75;
+
+    color: #d0d0d0;
+}
+
+.method-copy strong {
+    color: #ffffff;
+}
+
+.method-copy a {
+    color: var(--learn-blue);
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.method-copy a:hover {
+    text-decoration: underline;
+}
 
 /* ==========================================================
    TABLET
