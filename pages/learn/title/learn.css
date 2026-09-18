@@ -953,3 +953,39 @@
     padding: 85px 6%;
     }
 }
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.learn-footer {
+    min-height: 110px;
+    padding: 35px 5vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    background: #f1eee5;
+    color: #111111;
+
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.learn-footer > div:last-child {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.learn-footer a {
+    color: #111111;
+    text-decoration: none;
+}
+
+.learn-footer a:hover {
+    text-decoration: underline;
+}
