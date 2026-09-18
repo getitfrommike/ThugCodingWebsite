@@ -12,6 +12,11 @@
 
     <title>LEARN — THUG CODING®</title>
 
+    <meta
+        name="description"
+        content="Learn to build, use, sell, and make money with technology through THUG CODING®."
+    >
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
@@ -26,10 +31,9 @@
     >
 
     <!-- Shared interior-page styles -->
-    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="../../pages.css">
 
-    <!-- LEARN-only styles -->
-    <link rel="stylesheet" href="learn.css">
+    <link rel="stylesheet" href="title.css">
 
 </head>
 
@@ -41,37 +45,43 @@
      NAVIGATION
 ========================================================== -->
 
+<!-- =========================================================
+     SITE NAVIGATION
+     STANDARD THUG CODING® SITE HEADER
+========================================================== -->
+
 <nav class="page-nav">
 
-    <a href="../index.html" class="page-logo">
-
+    <a
+        href="../../../index.html"
+        class="page-logo"
+        aria-label="THUG CODING® home"
+    >
         <img
-            src="../images/logo.png"
-            alt="THUG CODING"
+            src="../../../images/logo.png"
+            alt="THUG CODING®"
         >
-
     </a>
-
 
     <div class="page-nav-links">
 
-        <a href="drops.html">
+        <a href="../../drops.html">
             DROPS
         </a>
 
-        <a href="journal.html">
+        <a href="../../journal.html">
             JOURNAL
         </a>
 
-        <a href="learn.html" class="active">
+        <a href="../learn.html" class="active">
             LEARN
         </a>
 
-        <a href="lab.html">
+        <a href="../../lab.html">
             LAB
         </a>
 
-        <a href="../index.html">
+        <a href="../../../index.html">
             HOME
         </a>
 
@@ -82,53 +92,100 @@
 
 
 <!-- =========================================================
-     LEARN HERO
+     HERO
 ========================================================== -->
 
 <header class="learn-hero">
 
+    <div class="hero-watermark" aria-hidden="true">
+        LEARN
+    </div>
+
+
     <div class="learn-eyebrow">
-        THUG CODING® / LEARN
+        THUG CODING<sup>®</sup> / LEARN
     </div>
 
 
     <h1>
 
-        <span class="hero-small">
+        <span class="hero-connector">
             FROM
         </span>
 
         <span>
-            AVERAGE CONSUMER
-        </span>
-
-        <span class="hero-small">
-            TO
+            AVERAGE
         </span>
 
         <span>
-            EXPERT BUILDER.
+            CONSUMER
+        </span>
+
+        <span class="hero-connector">
+            TO
+        </span>
+
+        <span class="hero-outline">
+            EXPERT
+        </span>
+
+        <span>
+            BUILDER.
         </span>
 
     </h1>
 
 
-    <p class="learn-intro">
+    <div class="hero-bottom">
 
-        Learn to build, use, sell, and make money
-        with technology.
+        <p>
+            Learn how technology works.
+            Learn how to build with it.
+            Learn how to turn what you build
+            into economic value.
+        </p>
 
-    </p>
 
+        <a
+            href="#learning-paths"
+            class="primary-button"
+        >
+            CHOOSE A PATH
+            <span>↓</span>
+        </a>
 
-    <a
-        href="#learning-paths"
-        class="learn-primary-button"
-    >
-        CHOOSE A PATH
-    </a>
+    </div>
 
 </header>
+
+
+
+<!-- =========================================================
+     PROCESS STRIP
+========================================================== -->
+<!--
+
+<section class="process-strip">
+
+    <span>LEARN IT</span>
+    <i>→</i>
+
+    <span>BUILD IT</span>
+    <i>→</i>
+
+    <span>BREAK IT</span>
+    <i>→</i>
+
+    <span>FIX IT</span>
+    <i>→</i>
+
+    <span>SHIP IT</span>
+    <i>→</i>
+
+    <span>SELL IT</span>
+
+</section>
+-->
 
 
 
@@ -136,197 +193,376 @@
      LEARNING PATHS
 ========================================================== -->
 
+<main>
+
 <section
     class="learning-paths"
     id="learning-paths"
 >
 
+    <div class="section-intro">
 
-    <div class="learn-section-heading">
+        <div class="section-index">
+            01 / LEARNING PATHS
+        </div>
 
-        <span>
-            LEARNING PATHS
-        </span>
 
-        <h2>
-            WHAT DO YOU WANT<br>
-            TO LEARN?
-        </h2>
+        <div>
+
+            <h2>
+                WHAT DO YOU<br>
+                WANT TO LEARN?
+            </h2>
+
+        </div>
+
+
+        <p>
+            Pick a discipline. Learn the fundamentals.
+            Put them to work building something real.
+        </p>
 
     </div>
 
 
 
-    <div class="learning-path-grid">
+    <div class="path-grid">
 
 
         <!-- =================================================
-             01 — CODE
+             CODE
         ================================================== -->
 
-        <article class="learning-path-card">
+        <a href="code.html" class="path-card">
 
-            <div class="path-number">
-                01
+            <div class="path-top">
+
+                <span class="path-number">
+                    01
+                </span>
+
+                <span class="path-status">
+                    COMING SOON
+                </span>
+
             </div>
 
-            <h3>
-                CODE
-            </h3>
 
-            <p>
-                Learn programming fundamentals and
-                build real software.
-            </p>
-
-            <span class="path-status">
-                COMING SOON
-            </span>
-
-        </article>
-
-
-
-        <!-- =================================================
-             02 — WEB
-        ================================================== -->
-
-        <article class="learning-path-card">
-
-            <div class="path-number">
-                02
+            <div class="path-decoration code-decoration">
+                { }
             </div>
 
-            <h3>
-                WEB
-            </h3>
 
-            <p>
-                Build websites, applications,
-                interfaces, and digital experiences.
-            </p>
+            <div class="path-content">
 
-            <span class="path-status">
-                COMING SOON
-            </span>
+                <span class="path-kicker">
+                    TELL THE COMPUTER WHAT TO DO.
+                </span>
 
-        </article>
+                <h3>
+                    CODE
+                </h3>
 
+                <p>
+                    Learn programming fundamentals and
+                    build real software.
+                </p>
 
-
-        <!-- =================================================
-             03 — AI
-        ================================================== -->
-
-        <article class="learning-path-card">
-
-            <div class="path-number">
-                03
             </div>
 
-            <h3>
-                AI
-            </h3>
 
-            <p>
-                Learn how modern AI works and how
-                to build useful systems with it.
-            </p>
+            <div class="path-tags">
 
-            <span class="path-status">
-                COMING SOON
-            </span>
+                <span>PYTHON</span>
+                <span>JAVASCRIPT</span>
+                <span>LOGIC</span>
+                <span>DEBUGGING</span>
 
-        </article>
-
-
-
-        <!-- =================================================
-             04 — SYSTEMS
-        ================================================== -->
-
-        <article class="learning-path-card">
-
-            <div class="path-number">
-                04
             </div>
-
-            <h3>
-                SYSTEMS
-            </h3>
-
-            <p>
-                APIs, automation, infrastructure,
-                data, and connected software.
-            </p>
-
-            <span class="path-status">
-                COMING SOON
-            </span>
-
-        </article>
-
-
-
-        <!-- =================================================
-             05 — SOFTWARE SALES
-        ================================================== -->
-
-        <a
-            href="software-sales.html"
-            class="learning-path-card software-sales-path"
-        >
-
-            <div class="path-number">
-                05
-            </div>
-
-            <div class="path-live">
-                ● ACTIVE
-            </div>
-
-            <h3>
-                SOFTWARE<br>
-                SALES
-            </h3>
-
-            <p>
-                Learn how to sell real software
-                to real customers.
-            </p>
-
-            <span class="path-enter">
-                ENTER PATH →
-            </span>
 
         </a>
 
 
 
         <!-- =================================================
-             06 — BUSINESS
+             WEB
         ================================================== -->
 
-        <article class="learning-path-card">
+        <a href="web.html" class="path-card">
 
-            <div class="path-number">
-                06
+            <div class="path-top">
+
+                <span class="path-number">
+                    02
+                </span>
+
+                <span class="path-status">
+                    COMING SOON
+                </span>
+
             </div>
 
-            <h3>
-                BUSINESS
-            </h3>
 
-            <p>
-                Turn technical skills, products,
-                and ideas into economic value.
-            </p>
+            <div class="path-decoration">
+                &lt;/&gt;
+            </div>
 
-            <span class="path-status">
-                COMING SOON
-            </span>
 
-        </article>
+            <div class="path-content">
+
+                <span class="path-kicker">
+                    BUILD FOR THE INTERNET.
+                </span>
+
+                <h3>
+                    WEB
+                </h3>
+
+                <p>
+                    Build websites, applications,
+                    interfaces, and digital experiences.
+                </p>
+
+            </div>
+
+
+            <div class="path-tags">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JAVASCRIPT</span>
+                <span>REACT</span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             AI
+        ================================================== -->
+
+        <a href="ai.html" class="path-card">
+
+            <div class="path-top">
+
+                <span class="path-number">
+                    03
+                </span>
+
+                <span class="path-status">
+                    COMING SOON
+                </span>
+
+            </div>
+
+
+            <div class="path-decoration">
+                AI
+            </div>
+
+
+            <div class="path-content">
+
+                <span class="path-kicker">
+                    DON'T JUST USE AI. BUILD WITH IT.
+                </span>
+
+                <h3>
+                    AI
+                </h3>
+
+                <p>
+                    Learn how modern AI works and how
+                    to build useful systems with it.
+                </p>
+
+            </div>
+
+
+            <div class="path-tags">
+
+                <span>MODELS</span>
+                <span>APIs</span>
+                <span>AGENTS</span>
+                <span>AUTOMATION</span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             SYSTEMS
+        ================================================== -->
+
+        <a href="systems.html" class="path-card">
+
+            <div class="path-top">
+
+                <span class="path-number">
+                    04
+                </span>
+
+                <span class="path-status">
+                    COMING SOON
+                </span>
+
+            </div>
+
+
+            <div class="path-decoration">
+                API
+            </div>
+
+
+            <div class="path-content">
+
+                <span class="path-kicker">
+                    MAKE TECHNOLOGY TALK TO TECHNOLOGY.
+                </span>
+
+                <h3>
+                    SYSTEMS
+                </h3>
+
+                <p>
+                    APIs, automation, infrastructure,
+                    data, and connected software.
+                </p>
+
+            </div>
+
+
+            <div class="path-tags">
+
+                <span>APIs</span>
+                <span>DATA</span>
+                <span>AUTOMATION</span>
+                <span>INFRASTRUCTURE</span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             SOFTWARE SALES
+        ================================================== -->
+
+       <a href="software-sales.html" class="path-card">
+
+            <div class="path-top">
+
+                <span class="path-number">
+                    05
+                </span>
+
+                <span class="path-live">
+                    <i></i>
+                    ACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="path-decoration">
+                $
+            </div>
+
+
+            <div class="path-content">
+
+                <span class="path-kicker">
+                    LEARN TO SELL WHAT TECHNOLOGY CAN DO.
+                </span>
+
+                <h3>
+                    SOFTWARE<br>
+                    SALES
+                </h3>
+
+                <p>
+                    Learn how to sell real software
+                    to real customers.
+                </p>
+
+            </div>
+
+
+            <div class="path-tags">
+
+                <span>PROSPECTING</span>
+                <span>DISCOVERY</span>
+                <span>DEMOS</span>
+                <span>CLOSING</span>
+
+            </div>
+
+
+            <div class="path-enter">
+                ENTER PATH →
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             BUSINESS
+        ================================================== -->
+
+        <a href="business.html" class="path-card">
+
+            <div class="path-top">
+
+                <span class="path-number">
+                    06
+                </span>
+
+                <span class="path-status">
+                    COMING SOON
+                </span>
+
+            </div>
+
+
+            <div class="path-decoration">
+                ↑
+            </div>
+
+
+            <div class="path-content">
+
+                <span class="path-kicker">
+                    TURN TECHNOLOGY INTO ECONOMIC VALUE.
+                </span>
+
+                <h3>
+                    BUSINESS
+                </h3>
+
+                <p>
+                    Turn technical skills, products,
+                    software, and ideas into economic value.
+                </p>
+
+            </div>
+
+
+            <div class="path-tags">
+
+                <span>PRODUCT</span>
+                <span>PRICING</span>
+                <span>REVENUE</span>
+                <span>OPERATIONS</span>
+
+            </div>
+
+        </a>
 
 
     </div>
@@ -336,34 +572,138 @@
 
 
 <!-- =========================================================
-     FOOTER
+     THE METHOD
 ========================================================== -->
 
-<footer class="page-footer">
+<section class="learn-method">
 
-    <div>
-
-        © <span id="year"></span>
-        THUG CODING®. ALL RIGHTS RESERVED.
-
+    <div class="method-index">
+        02 / THE METHOD
     </div>
 
 
-    <div class="page-footer-links">
+    <div class="method-main">
 
-        <a href="../index.html">
+        <div class="method-heading">
+
+            <span>
+                HOW WE TEACH
+            </span>
+
+            <h2>
+                WE DON'T TEACH<br>
+                FROM TUTORIALS.
+            </h2>
+
+            <h3>
+                WE TEACH FROM<br>
+                THINGS WE BUILT.
+            </h3>
+
+        </div>
+
+
+        <div class="method-copy">
+
+            <p>
+                Every course begins with a real problem,
+                a real product, and a real development
+                process.
+            </p>
+
+            <p>
+                Programming. Interfaces. APIs. Data.
+                Testing. Packaging. Distribution.
+                Sales. Business.
+            </p>
+
+            <strong>
+                THE DISCIPLINES STOP BEING SEPARATE
+                WHEN YOU START BUILDING.
+            </strong>
+
+            <a href="../../lab.html">
+                ENTER THE LAB →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BUILD SOMETHING
+========================================================== -->
+
+<section class="build-something">
+
+    <span class="build-label">
+        DON'T KNOW WHERE TO START?
+    </span>
+
+
+    <h2>
+        BUILD
+        <span>
+            SOMETHING.
+        </span>
+    </h2>
+
+
+    <div class="build-bottom">
+
+        <p>
+            You don't have to master every technology
+            before you begin.
+        </p>
+
+        <strong>
+            START BUILDING.<br>
+            THE PATHS WILL MEET YOU THERE.
+        </strong>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="learn-footer">
+
+    <div>
+        © <span id="year"></span>
+        THUG CODING<sup>®</sup>. ALL RIGHTS RESERVED.
+    </div>
+
+
+    <div>
+
+        <a href="../../../index.html">
             HOME
         </a>
 
-        <a href="drops.html">
+        <a href="../../drops.html">
             DROPS
         </a>
 
-        <a href="journal.html">
+        <a href="../../journal.html">
             JOURNAL
         </a>
 
-        <a href="lab.html">
+        <a href="../../learn.html">
+            LEARN
+        </a>
+
+        <a href="../../lab.html">
             LAB
         </a>
 
@@ -372,10 +712,6 @@
 </footer>
 
 
-
-<!-- =========================================================
-     CURRENT YEAR
-========================================================== -->
 
 <script>
 
@@ -386,4 +722,5 @@
 
 
 </body>
+
 </html>
