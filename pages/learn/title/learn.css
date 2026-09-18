@@ -879,8 +879,9 @@
     }
 
     .learn-hero h1 {
-        font-size: clamp(3.6rem, 18vw, 6rem);
-        letter-spacing: -3px;
+        font-size: clamp(3.5rem, 15vw, 5.5rem);
+        line-height: 0.82;
+        letter-spacing: -0.055em;
     }
 
     .learn-hero h1 .hero-small {
