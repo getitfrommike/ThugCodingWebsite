@@ -473,25 +473,6 @@ if (storyMarquee && imageTrack) {
         pressedLink = null;
     }
 
-        /*
-         * Touch/pen has no meaningful mouseleave step.
-         * Resume autoplay immediately after release.
-         *
-         * Mouse behavior stays unchanged:
-         * hover remains paused until mouseleave.
-         */
-
-        if (event.pointerType !== 'mouse') {
-
-            const animation =
-                getMarqueeAnimation();
-
-            if (animation) {
-                animation.play();
-            }
-        }
-    }
-
 
     storyMarquee.addEventListener(
         'pointerup',
